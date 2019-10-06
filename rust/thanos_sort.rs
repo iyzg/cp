@@ -1,11 +1,3 @@
-// Thanos Sort
-// -----------
-// Link: https://codeforces.com/problemset/problem/1145/A
-// ELO: None
-
-// Oct. 5, 2019
-// Solved By: Ivy Zhang
-
 use std::cmp;
 use std::convert::TryInto;
 use std::io;
