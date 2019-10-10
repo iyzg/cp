@@ -12,43 +12,34 @@ using namespace std;
 
 int main() {
     int a, b;
-    vector<int> multiples;
+    vector<long long int> multiples;
 
     cin >> a >> b;
     
     multiples.push_back(1);
-    for (int i = 2; i < (min(a,b) / 2) + 1; i++)
+    int c = 1;
+    for (long long int i = 2; i < min(a,b) + 1; i++)
     {
         if (a % i == 0 && b % i == 0 && find(multiples.begin(), multiples.end(), i) == multiples.end())
         {
             multiples.push_back(i);
-            int ci = a / i;
-            if (b % ci == 0 && find(multiples.begin(), multiples.end(), i) == multiples.end()) 
+            
+            bool coprime = true;
+            // Check if it's going to be co prime 
+            for (long long int j = 1; j < multiples.size() - 2; j++)
             {
-                multiples.push_back(ci);
+                if (i % multiples[j] == 0) {
+                    coprime = false;
+                    break;
+                }
+            }
+
+            if (coprime) 
+            {
+                c++;
             }
         }
     }
     
-    // Start at one because 1 will always be coprime, and index 1 because 0 would be 1
-    int c = 1;
-    for (int i = multiples.size() - 1; i > 0; i--)
-    {
-        bool is_coprime = true;
-        for (int j = i - 1; j > 0; j--)
-        {
-            if (multiples[i] % multiples[j] == 0)
-            {
-                is_coprime = false;
-                break;
-            }
-        }
-
-        if (is_coprime)
-        {
-            c++;
-        }
-    }
-
     cout << c;
 }
