@@ -11,35 +11,32 @@ using namespace std;
  */
 
 int main() {
-    int a, b;
+    long long int a, b;
     vector<long long int> multiples;
 
     cin >> a >> b;
     
     multiples.push_back(1);
-    int c = 1;
-    for (long long int i = 2; i < min(a,b) + 1; i++)
+    for (long long int i = 2; i <= sqrt(min(a, b)); i++)
     {
-        if (a % i == 0 && b % i == 0 && find(multiples.begin(), multiples.end(), i) == multiples.end())
+        if (a % i == 0 && b % i == 0)
         {
-            multiples.push_back(i);
-            
             bool coprime = true;
             // Check if it's going to be co prime 
-            for (long long int j = 1; j < multiples.size() - 2; j++)
+            for (long unsigned int j = 1; j < multiples.size(); j++)
             {
                 if (i % multiples[j] == 0) {
                     coprime = false;
                     break;
                 }
             }
-
+            
             if (coprime) 
             {
-                c++;
+                multiples.push_back(i);
             }
         }
     }
     
-    cout << c;
+    cout << multiples.size();
 }
