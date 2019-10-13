@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+filename=$(basename -- "$1")
+filename="${filename%.*}"
+echo "$filename"
+
+g++ -std=c++11 -O2 -Wall $1 -o "$filename"

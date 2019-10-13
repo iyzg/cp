@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cp ~/competitive_programming/template.cpp $PWD/$1.cpp
