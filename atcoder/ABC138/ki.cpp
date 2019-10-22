@@ -2,37 +2,43 @@
 
 using namespace std;
 
-void apply_points(vector<int> tree[], int counters[], int node, int value)
-{
-    counters[node - 1] += value;
-    for (int child : tree[node - 1])
+#define MAXN 200005
+
+vector<int> tree[MAXN];
+long long int differences[MAXN] = { 0 };
+
+void results(int node, int last) {
+    for (int child : tree[node])
     {
-        apply_points(tree, counters, child, value);
+        if (child != last) {
+            differences[child] += differences[node];
+            results(child, node);
+        }
     }
 }
+
 
 int main() {
     int N, Q;
     cin >> N >> Q;
-
-    vector<int> tree[N];
-    int counters[N] = { 0 };
-    int parent, child;
+    
+    int a, b;
     for (int i = 0; i < N - 1; i++)
     {
-        cin >> parent >> child;
-        tree[parent - 1].push_back(child);
-    }
-    
-    int node, value;
-    for (int i = 0; i < Q; i++)
-    {
-        cin >> node >> value;
-        apply_points(tree, counters, node, value);
+        cin >> a >> b;
+        tree[a - 1].push_back(b - 1);
+        tree[b - 1].push_back(a - 1);
     }
 
-    for (int node : counters)
+    for (int i = 0; i < Q; i++)
     {
-        cout << node << " ";
+        cin >> a >> b;
+        differences[a - 1] += b;
+    }
+    
+    results(0, -1);
+    for (int i = 0; i < N; i++)
+    {
+        cout << differences[i] << " ";
     }
 }
