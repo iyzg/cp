@@ -8,6 +8,8 @@ int main() {
     
     int permutation[N];
     long long int ways[K] = { 0 };
+
+    // Adds the blue balls in as 0 and the red balls in as 1
     for (int i = 0; i < N; i++)
     {
         if (i < K) {
@@ -24,14 +26,14 @@ int main() {
             if (permutation[i] == 0)   
             {
                 found += 1;
-                i++;
                 while (permutation[i] == 0)
                 {
                     i++;
                 }
             }
-            ways[found - 1]++;
         }
+
+        ways[found - 1]++;
     } while(next_permutation(permutation, permutation + N));
 
     for (int i = 0; i < K; i++)

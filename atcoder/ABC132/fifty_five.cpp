@@ -3,30 +3,8 @@
 using namespace std;
 
 int main() {
-    char first, second;
-    
-    cin >> first >> second;
-
-    char input;
-    cin >> input;
-    if (input == first)
-    {
-        cin >> input;
-        if (input == second)
-        {
-            cout << "Yes";
-        } else {
-            cout << "No";
-        }
-    } else if (input == second) {
-        cin >> input;
-            if (input == first)
-            {
-                cout << "Yes";
-            } else {
-                cout << "No";
-            }
-    } else {
-        cout << "No";
-    }
+    char s[10];
+    scanf("%s",s);
+    sort(s,s+ 4);
+    printf((s[0] ==s[1] &&s[1] !=s[2] &&s[2] ==s[3])? "Yes\n" : "No\n");
 }

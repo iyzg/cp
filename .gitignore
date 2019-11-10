@@ -4,6 +4,9 @@
 # Unignore all with extensions
 !*.*
 
+# Ignore all the a.out
+*.out
+
 # Unignore all dirs
 !*/
 
