@@ -21,6 +21,7 @@ void fill_odds(int curr, int target)
 }
 
 int main() {
+    cout << fixed << setprecision(12);
     odds.push(-1);
     odds.push(1);
     string send, received;
@@ -47,16 +48,15 @@ int main() {
         }
     }
     
-    cout << ss << " " << rs << " " << qm << "\n";
     if (qm == 0)
     {
         if (ss == rs)
-            cout << 1;
+            cout << (double)1;
         else 
-            cout << 0;
+            cout << (double)0;
     } else {
         if (abs(ss - rs) > qm) {
-            cout << 0;
+            cout << (double)0;
             return 0;
         } 
         int difference = abs(ss - rs), qmv = 0;
@@ -72,7 +72,6 @@ int main() {
         }
         double answer = (double)qmv / tc;
         // printf("%.12f\n", answer);
-        cout << setprecision(9) << fixed;
         cout << answer;
     }
 }
