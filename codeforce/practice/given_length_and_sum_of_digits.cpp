@@ -20,15 +20,15 @@ int main() {
     int number[m] = { 1 };
     s--;
 
-    int current_digit = m - 1;
+    int curr = m - 1;
     while (s > 0)
     {
-        number[current_digit]++;
+        number[curr]++;
         s--;
 
-        if (number[current_digit] == 9)
+        if (number[curr] == 9)
         {
-            current_digit--;
+            curr--;
         }
     }
 
