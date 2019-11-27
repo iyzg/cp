@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-cp ~/competitive_programming/template.cpp $PWD/$1.cpp
+if [ ! -f "$PWD/$1.cpp" ]; then
+    cp ~/competitive_programming/template.cpp $PWD/$1.cpp
+    nvim $PWD/$1.cpp
+fi

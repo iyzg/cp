@@ -36,13 +36,4 @@ typedef vector<pl> vpl;
 int main() {
 
     return 0;
-    // You should actually read the stuff at the bottom
 }
-
-/* Stuff to Look For
- * -----------------
- * Int overflow, array bounds
- * Initializing all variables, avoid weird behavior
- * Edge cases(n = 0, n = 1)
- * Just return 0 after result
- */

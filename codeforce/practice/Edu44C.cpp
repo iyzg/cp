@@ -34,6 +34,11 @@ typedef vector<pl> vpl;
 
 
 int main() {
+    int n, k, l; cin >> n >> k >> l;
+    ll a[n * k]; 
+    F0R(i, n * k) cin >> a[i];
+
+    
 
     return 0;
     // You should actually read the stuff at the bottom

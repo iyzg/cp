@@ -34,15 +34,39 @@ typedef vector<pl> vpl;
 
 
 int main() {
+    int n, m; cin >> n >> m;
+    pair<string, string> words[m];
+    bitset<3000> shorter;
 
+    string a, b;
+    F0R(i, m) {
+        cin >> a >> b;
+        words[i] = mp(a, b);
+
+        if (sz(a) <= sz(b))
+            shorter[i] = 0;
+        else
+            shorter[i] = 1;
+    }
+
+    string word, sentence = "";
+    F0R(i, n)
+    {
+        cin >> word;
+        F0R(j, m)
+        {
+            if (words[j].f == word || words[j].s == word)
+            {
+                if (shorter[j] == 0)
+                    sentence += words[j].f;
+                else 
+                    sentence += words[j].s;
+
+                sentence += " ";
+            }
+        }
+    }
+    
+    cout << sentence;
     return 0;
-    // You should actually read the stuff at the bottom
 }
-
-/* Stuff to Look For
- * -----------------
- * Int overflow, array bounds
- * Initializing all variables, avoid weird behavior
- * Edge cases(n = 0, n = 1)
- * Just return 0 after result
- */

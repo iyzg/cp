@@ -34,15 +34,25 @@ typedef vector<pl> vpl;
 
 
 int main() {
+    int n, c = 0; cin >> n;
+    str s;
+    getline(cin, s);
+    getline(cin, s);
+    
+    for(int i = 1; i < n; i = i + 2)
+    {
+        if (s[i] == s[i - 1])
+        {
+            if (s[i] == 'a')
+                s[i] = 'b';
+            else
+                s[i] = 'a';
+            c++;
+        }
+    }
+
+    cout << c << "\n";
+    cout << s;
 
     return 0;
-    // You should actually read the stuff at the bottom
 }
-
-/* Stuff to Look For
- * -----------------
- * Int overflow, array bounds
- * Initializing all variables, avoid weird behavior
- * Edge cases(n = 0, n = 1)
- * Just return 0 after result
- */

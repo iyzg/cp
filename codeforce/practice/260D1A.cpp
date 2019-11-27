@@ -34,15 +34,24 @@ typedef vector<pl> vpl;
 
 
 int main() {
+    int n; 
+    cin >> n;
+    ll a[100005] = { 0 };
+    ll dp[100005];
+    
+    int in;
+    F0R(i, n) 
+    {
+        cin >> in;
+        a[in]++;
+    }
 
-    return 0;
-    // You should actually read the stuff at the bottom
+    dp[0] = 0;
+    dp[1] = a[1];
+    for (long long i = 2; i < 100005; ++i)
+    {
+        dp[i] = max(dp[i - 1], dp[i - 2] + (a[i] * i));
+    }
+
+    cout << dp[100004];
 }
-
-/* Stuff to Look For
- * -----------------
- * Int overflow, array bounds
- * Initializing all variables, avoid weird behavior
- * Edge cases(n = 0, n = 1)
- * Just return 0 after result
- */

@@ -32,17 +32,33 @@ typedef vector<pl> vpl;
 #define f first
 #define s second
 
-
-int main() {
-
-    return 0;
-    // You should actually read the stuff at the bottom
+bool sortinrev(const pair<int,int> &a,  
+               const pair<int,int> &b) 
+{ 
+       return (a.first > b.first); 
 }
 
-/* Stuff to Look For
- * -----------------
- * Int overflow, array bounds
- * Initializing all variables, avoid weird behavior
- * Edge cases(n = 0, n = 1)
- * Just return 0 after result
- */
+int main() {
+    int n, can, shot = 0, shots = 0; cin >> n;
+    pi cans[n];
+    str seq = "";
+    F0R(i, n)
+    {
+        cin >> can;
+        cans[i] = mp(can, i);
+    }
+
+    sort(cans, cans + n, sortinrev);
+    
+    F0R(i, n)
+    {
+        shots += cans[i].f * shot + 1;
+        seq += to_string(cans[i].s + 1) + " ";
+        shot++;
+    }
+
+    cout << shots << "\n";
+    cout << seq;
+
+    return 0;
+}
