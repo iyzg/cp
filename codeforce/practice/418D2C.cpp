@@ -32,20 +32,42 @@ typedef vector<pl> vpl;
 #define f first
 #define s second
 
-namespace io {
-    void setIn(string s) { freopen(s.c_str(),"r",stdin); }
-    void setOut(string s) { freopen(s.c_str(),"w",stdout); }
-    void setIO(string s = "") {
-        cin.sync_with_stdio(0); cin.tie(0); // fast I/O
-        // cin.exceptions(cin.failbit); // ex. throws exception when you try to read letter into int
-        if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
-    }
-}
- 
-using namespace io;
+const int MAXN = 1502;
+const int ALPHABET = 26;
+
+int n;
+char gar[MAXN];
+int ans[ALPHABET][MAXN] = {{ 0 }};
+int Q, m_i;
+char c_i;
 
 int main() {
+    cin >> n; getchar();
+    F0R(i, n) gar[i] = getchar() - 'a';
 
+    F0R(c, ALPHABET)
+    {
+        F0R(i, n)
+        {
+            int replace_count = 0;
+            FOR(j, i, n)
+            {
+                if (gar[j] != c) ++replace_count;
+                ans[c][replace_count] = max(ans[c][replace_count], j - i + 1);
+            }
+        }
+        FOR(i, 1, MAXN)
+        {
+            ans[c][i] = max(ans[c][i], ans[c][i - 1]);
+        }
+    }
+
+    cin >> Q;
+    F0R(q, Q)
+    {
+        cin >> m_i >> c_i;
+        cout << ans[c_i - 'a'][m_i] << "\n";
+    }
     return 0;
     // You should actually read the stuff at the bottom
 }

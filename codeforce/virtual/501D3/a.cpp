@@ -32,46 +32,39 @@ typedef vector<pl> vpl;
 #define f first
 #define s second
 
-ll factorial(ll n)
-{
-    return (n == 1 || n == 0) ? 1 : factorial(n - 1) * n;
-}
 
-int const MAX = 1000000001;
 int main() {
-    int n; cin >> n;
-    ll c[3] = { 0 };
-    ll a[n];
+    int n, m; cin >> n >> m;
+    bitset<100> bs;
+    bs.set();
     F0R(i, n)
     {
-        cin >> a[i];
+        int left, right; cin >> left >> right;
+        FOR(j, left - 1, right) bs[j] = 0;
     }
-
-    sort(a, a + n);
-    ll s1 = a[0];
-    ll s2 = a[1];
-    ll s3 = a[2];
-        
-    F0R(i, n)
+    
+    int count = 0;
+    str ans = "";
+    F0R(i, m)
     {
-        if (a[i] == s1) c[0]++;
-        if (a[i] == s2) c[1]++;
-        if (a[i] == s3) c[2]++;
+        if (bs[i])
+        {
+            ++count;
+            ans += to_string(i + 1) + " ";
+        }
     }
 
-    ll ans = 1;
-    if (s1 != s2 && s1 != s3 && s2 != s3)
-    {
-        ans = c[0] * c[1] * c[2];
-    } else if (s1 == s2 && s2 == s3) {
-        ans = (c[0] * (c[0] - 1) * (c[0] - 2)) / 6;
-    } else if (s1 == s2 && s1 != s3) {
-        ans = (c[0] * (c[0] - 1)) / 2 * c[2];
-    } else {
-        ans = (c[1] * (c[1] - 1)) / 2 * c[0];
-    }
-
+    cout << count << "\n";
     cout << ans;
 
     return 0;
+    // You should actually read the stuff at the bottom
 }
+
+/* Stuff to Look For
+ * -----------------
+ * Int overflow, array bounds
+ * Initializing all variables, avoid weird behavior
+ * Edge cases(n = 0, n = 1)
+ * Just return 0 after result
+ */

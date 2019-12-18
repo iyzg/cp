@@ -45,7 +45,20 @@ namespace io {
 using namespace io;
 
 int main() {
+    setIO();
+    str a, b,c ; 
+    getline(cin, a);
+    getline(cin, b);
+    c = a;
+    int i = 1;
+    while (c <= a && i >= 0)
+    {
+        c[sz(c) - i] += 1;
+        if (c[sz(c) - i] == '{') c[sz(c) - i] = 'a';
+        ++i;
+    }
 
+    c > a && c < b ? cout << c : cout << "No such string";
     return 0;
     // You should actually read the stuff at the bottom
 }

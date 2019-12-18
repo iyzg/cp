@@ -44,8 +44,35 @@ namespace io {
  
 using namespace io;
 
+const ll MAXP = 10000000002;
+ll n, k, a_i, c = 1, calc = 1, ans = 0;
+set<ll> valid;
+map<ll, ll> m;
+ 
 int main() {
+    setIO();
+    cin >> n >> k;
+    while (calc < MAXP)
+    {
+        valid.insert(calc);
+        calc = pow(++c, k) + 0.5;
+    }
+ 
+    F0R(i, n)
+    {
+        cin >> a_i;
+        if (valid.find(a_i) != valid.end()) ans += m[a_i];
+        ++m[a_i];
+    }
 
+    F0R(i, n)
+    {
+        cin >> a_i;
+        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
+        ++m[a_i];
+    }
+
+    cout << ans;
     return 0;
     // You should actually read the stuff at the bottom
 }

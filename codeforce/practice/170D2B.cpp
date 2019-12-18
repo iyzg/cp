@@ -32,22 +32,59 @@ typedef vector<pl> vpl;
 #define f first
 #define s second
 
-namespace io {
-    void setIn(string s) { freopen(s.c_str(),"r",stdin); }
-    void setOut(string s) { freopen(s.c_str(),"w",stdout); }
-    void setIO(string s = "") {
-        cin.sync_with_stdio(0); cin.tie(0); // fast I/O
-        // cin.exceptions(cin.failbit); // ex. throws exception when you try to read letter into int
-        if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
-    }
-}
- 
-using namespace io;
 
 int main() {
+    int n; cin >> n;
+    str a[n];
+    bitset<26> alpha;
+    getline(cin, a[0]);
+    F0R(i, n)
+    {
+        getline(cin, a[i]);
+        F0R(j, sz(a[i]))
+        {
+            alpha[a[i][j] - 97] = 1;
+        }
+    }
+
+    F0R(i, 26)
+    {
+        if (!alpha[i])
+        {
+            cout << (char)(i + 97);
+            return 0;
+        }
+    }
+    
+    char curr = 'a';
+    while(curr != 'z')
+    {
+        alpha.reset();
+        F0R(i, n)
+        {
+            F0R(j, sz(a[i]))
+            {
+                if (a[i][j] == curr && j < sz(a[i]) - 1) alpha[a[i][j + 1] - 97] = 1;
+            }
+        }
+
+        F0R(i, 26)
+        {
+            if (!alpha[i])
+            {
+                cout << curr << (char)(i + 97);
+                return 0;
+            }
+        }
+        ++curr;
+    }
+
+    
+    // Second check for two letter combos
 
     return 0;
     // You should actually read the stuff at the bottom
+    // Note: max length has to be 2 letters since it's impossible to rule out every 2 letter combination because of low constraints
 }
 
 /* Stuff to Look For

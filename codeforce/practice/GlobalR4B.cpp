@@ -32,20 +32,46 @@ typedef vector<pl> vpl;
 #define f first
 #define s second
 
-namespace io {
-    void setIn(string s) { freopen(s.c_str(),"r",stdin); }
-    void setOut(string s) { freopen(s.c_str(),"w",stdout); }
-    void setIO(string s = "") {
-        cin.sync_with_stdio(0); cin.tie(0); // fast I/O
-        // cin.exceptions(cin.failbit); // ex. throws exception when you try to read letter into int
-        if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
-    }
-}
- 
-using namespace io;
 
 int main() {
+    str wow;
+    getline(cin, wow);
+    ll ans = 0;
+    vl left, right;
+    int vc = 0;
+    int row = 0;
+    F0R(i, sz(wow))
+    {
+        if (wow[i] == 'v')
+        {
+            ++row;
+            if (row > 1) ++vc;
+        } else {
+            left.pb(vc);
+            row = 0;
+        }
+    }
 
+    vc = 0;
+    row = 0;
+    R0F(i, sz(wow))
+    {
+        if (wow[i] == 'v')
+        {
+            ++row;
+            if (row > 1) ++vc;
+        }
+        else 
+        {
+            right.pb(vc);
+            row = 0;
+        }
+    }
+    F0R(i, sz(left))
+    {
+        ans += left[i] * right[(sz(left) - 1) - i];
+    }
+    cout << ans;
     return 0;
     // You should actually read the stuff at the bottom
 }

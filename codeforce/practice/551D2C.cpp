@@ -44,8 +44,56 @@ namespace io {
  
 using namespace io;
 
-int main() {
+int n;
+int lc = 0, rc = 0;
+str line, ans;
 
+int main() {
+    setIO();
+    cin >> n; 
+    if (n % 2 == 1)
+    {
+        cout << ":(";
+        return 0;
+    }
+
+    getline(cin, line);
+    getline(cin, line);
+
+    F0R(i, n)
+    {
+        if (line[i] == '(') ++lc;
+        else if (line[i] == ')') ++rc;
+    }
+
+    F0R(i, n)
+    {
+        if (line[i] == '?')
+        {
+            if (lc < n / 2)
+            {
+                ++lc;
+                line[i] = '(';
+            } else {
+                ++rc;
+                line[i] = ')';
+            }
+        }
+    }
+
+    // Check validity
+    bool valid = true;
+    int nlc = 0, nrc = 0;
+    F0R(i, n)
+    {
+        line[i] == '(' ? ++nlc : ++nrc;
+        if (i < n - 1 && nlc == nrc) valid = false;
+        else if (nrc > nlc) valid = false;
+    }
+
+    if (nlc != nrc) valid = false;
+
+    valid ? cout << line : cout << ":(";
     return 0;
     // You should actually read the stuff at the bottom
 }

@@ -32,46 +32,46 @@ typedef vector<pl> vpl;
 #define f first
 #define s second
 
-ll factorial(ll n)
-{
-    return (n == 1 || n == 0) ? 1 : factorial(n - 1) * n;
-}
 
-int const MAX = 1000000001;
 int main() {
-    int n; cin >> n;
-    ll c[3] = { 0 };
-    ll a[n];
+    ll n, m; cin >> n >> m;
+    ll min = 0;
+    ll curr = 0;
+    vl diffs;
     F0R(i, n)
     {
-        cin >> a[i];
+        ll a, b; cin >> a >> b;
+        diffs.pb(a - b);
+        min += b;
+        curr += a;
     }
 
-    sort(a, a + n);
-    ll s1 = a[0];
-    ll s2 = a[1];
-    ll s3 = a[2];
-        
-    F0R(i, n)
+    if (min > m)
     {
-        if (a[i] == s1) c[0]++;
-        if (a[i] == s2) c[1]++;
-        if (a[i] == s3) c[2]++;
+        cout << -1;
+        return 0;
     }
 
-    ll ans = 1;
-    if (s1 != s2 && s1 != s3 && s2 != s3)
+    sort(all(diffs), greater<ll>());
+    ll ans = 0;
+    ll index = 0;
+    while (curr > m)
     {
-        ans = c[0] * c[1] * c[2];
-    } else if (s1 == s2 && s2 == s3) {
-        ans = (c[0] * (c[0] - 1) * (c[0] - 2)) / 6;
-    } else if (s1 == s2 && s1 != s3) {
-        ans = (c[0] * (c[0] - 1)) / 2 * c[2];
-    } else {
-        ans = (c[1] * (c[1] - 1)) / 2 * c[0];
+        curr -= diffs[index];
+        ++ans;
+        ++index;
     }
 
     cout << ans;
 
     return 0;
+    // You should actually read the stuff at the bottom
 }
+
+/* Stuff to Look For
+ * -----------------
+ * Int overflow, array bounds
+ * Initializing all variables, avoid weird behavior
+ * Edge cases(n = 0, n = 1)
+ * Just return 0 after result
+ */

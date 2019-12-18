@@ -32,20 +32,22 @@ typedef vector<pl> vpl;
 #define f first
 #define s second
 
-namespace io {
-    void setIn(string s) { freopen(s.c_str(),"r",stdin); }
-    void setOut(string s) { freopen(s.c_str(),"w",stdout); }
-    void setIO(string s = "") {
-        cin.sync_with_stdio(0); cin.tie(0); // fast I/O
-        // cin.exceptions(cin.failbit); // ex. throws exception when you try to read letter into int
-        if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
+const ll MOD = 1000000007;
+
+ll fastPow(ll a, ll pw, ll mod) {
+    ll res = 1;
+    a %= mod;
+    while(pw > 0) {
+        if(pw & 1) res = (res*a)%mod;
+        a = (a*a)%mod;
+        pw >>= 1;
     }
+    return res;
 }
- 
-using namespace io;
 
 int main() {
-
+    ll n, m; cin >> n >> m;
+    cout << fastPow((fastPow(2, m, MOD) - 1 + MOD), n, MOD);
     return 0;
     // You should actually read the stuff at the bottom
 }

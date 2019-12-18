@@ -32,46 +32,43 @@ typedef vector<pl> vpl;
 #define f first
 #define s second
 
-ll factorial(ll n)
-{
-    return (n == 1 || n == 0) ? 1 : factorial(n - 1) * n;
-}
 
-int const MAX = 1000000001;
 int main() {
-    int n; cin >> n;
-    ll c[3] = { 0 };
-    ll a[n];
-    F0R(i, n)
+    ll N, K, S; cin >> N >> K >> S;
+    if ((N - 1) * K < S || S < K) 
     {
-        cin >> a[i];
+        cout << "NO";
+        return 0;
     }
 
-    sort(a, a + n);
-    ll s1 = a[0];
-    ll s2 = a[1];
-    ll s3 = a[2];
-        
-    F0R(i, n)
+    str seq = "";
+    ll house = 1;
+    while (S > 0)
     {
-        if (a[i] == s1) c[0]++;
-        if (a[i] == s2) c[1]++;
-        if (a[i] == s3) c[2]++;
+        ll dist = ceil((ld)S / K);
+        if (house + dist <= N) 
+        {
+            seq += to_string(house + dist) + " ";
+            house += dist;
+        } else if (house - dist > 0) {
+            seq += to_string(house - dist) + " ";
+            house -= dist;
+        }
+        S -= dist;
+        --K;
     }
 
-    ll ans = 1;
-    if (s1 != s2 && s1 != s3 && s2 != s3)
-    {
-        ans = c[0] * c[1] * c[2];
-    } else if (s1 == s2 && s2 == s3) {
-        ans = (c[0] * (c[0] - 1) * (c[0] - 2)) / 6;
-    } else if (s1 == s2 && s1 != s3) {
-        ans = (c[0] * (c[0] - 1)) / 2 * c[2];
-    } else {
-        ans = (c[1] * (c[1] - 1)) / 2 * c[0];
-    }
-
-    cout << ans;
+    cout << "YES\n";
+    cout << seq;
 
     return 0;
+    // You should actually read the stuff at the bottom
 }
+
+/* Stuff to Look For
+ * -----------------
+ * Int overflow, array bounds
+ * Initializing all variables, avoid weird behavior
+ * Edge cases(n = 0, n = 1)
+ * Just return 0 after result
+ */

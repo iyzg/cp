@@ -44,7 +44,84 @@ namespace io {
  
 using namespace io;
 
+vpl a;
+ll n, in, d = -1, ri = -1;
+bool valid = true;
+    
+vector<ll> genset(ll start, ll times, ll increment)
+{
+    vl res;
+    F0R(i, n)
+    {
+        res.pb(start + (i * increment));
+    }
+
+    return res;
+}
+
 int main() {
+    setIO();
+    cin >> n;
+    F0R(i, n)
+    {
+        cin >> in;
+        a.pb(mp(in, i));
+    }
+    
+    sort(all(a));
+    
+    // Remove first
+    vl b = genset(a[1].f, n - 1, a[2].f - a[1].f);
+    FOR(i, 1, n)
+    {
+        if (a[i].f != b[i - 1]) valid = false;
+    }
+    if (valid)
+    {
+        cout << 1;
+        return 0;
+    }
+
+    // Remove second
+    valid = true;
+    b = genset(a[0].f, n - 1, a[2].f - a[0].f);
+    F0R(i, n)
+    {
+        if (i == 0)
+        {
+            if (a[0].f != b[0]) valid = false;
+        } else if (i == 1) {
+            continue;
+        } else {
+            if (a[i].f != b[i - 1]) valid = false;
+        }
+    }
+    if (valid)
+    {
+        cout << 2;
+        return 0;
+    }
+
+    d = a[1].f - a[0].f;
+    FOR(i, 1, n)
+    {
+        if (a[i].f - a[i - 1].f != d)
+        {
+            if (ri == -1)
+            {
+                ri = a[i].s;
+                a.erase(a.begin() + i);
+                --i;
+                --n;
+            } else {
+                cout << -1;
+                return 0;
+            }
+        }
+    }
+
+    if (ri == -1) cout << 1;
+    else cout << ri + 1;
 
     return 0;
     // You should actually read the stuff at the bottom
