@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,40 +46,70 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+int n, m;
+// Cost to getting to each stair, final one is cost to final room
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
-    return 0;
+	setIO();	
+	cin >> n >> m;
+	int dp[n][2], lm[n] = { 0 }, rm[n] = { 0 }, highest = 0;
+	str floor;
+	
+	F0R(i, n)
+	{
+		cin >> floor;
+		FOR(c, 1, m + 1)
+		{
+			if (floor[c]== '1')
+			{
+				if (!lm[n - 1 -i])
+				{
+					lm[n - 1 - i] = c;
+					rm[n - 1 - i] = c;
+				} else {
+					rm[n - 1 - i] = c;
+				}
+			} 
+		}
+	}
+	
+	F0R(i, n)
+	{
+		if (lm[i]) highest = i;
+	}
+	
+	
+	//F0R(i, n) cout << lm[i] << " " << rm[i] << "\n";
+	
+	if (highest > 0)
+	{
+		dp[0][0] = rm[0] * 2;
+		dp[0][1] = m + 1;
+	} else {
+		dp[0][0] = rm[0];
+		dp[0][1] = m + 1;
+	}
+	
+	FOR(i, 1, highest)
+	{
+		dp[i][0] = min(dp[i - 1][0] + 1 + (rm[i] * 2), dp[i - 1][1] + m + 2);
+		dp[i][1] = min(dp[i - 1][1] + 1 + ((m + 1 - lm[i]) * 2), dp[i - 1][0] + m + 2);
+		if (!lm[i]) dp[i][1] = min(dp[i][1], dp[i - 1][1] + 1);
+	}
+	
+	if (highest > 0)
+	{
+		dp[highest][0] = dp[highest - 1][0] + rm[highest] + 1;
+		dp[highest][1] = dp[highest - 1][1] + (m + 1 - lm[highest]) + 1;
+	}
+	
+	cout << min(dp[highest][0], dp[highest][1]);
+	
+	//F0R(i, n)
+	//{
+		//cout << dp[i][0] << " " << dp[i][1] << "\n";
+	//}
+	//return 0;
     // You should actually read the stuff at the bottom
 }
 

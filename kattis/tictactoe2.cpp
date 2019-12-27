@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,87 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	int T; cin >> T;
+	str input;
+	F0R(t, T)
+	{
+		char board[3][3];
+		int xc = 0, oc = 0;
+		bool xw = false, ow = false;
+		
+		F0R(i, 3)
+		{
+			//cout << input << "\n";
+			F0R(c, 3)
+			{
+				if (input[c] == '.') board[i][c] = 0;
+				else if (input[c] == 'X')
+				{
+					 board[i][c] = 1;
+					 ++xc;
+				}
+				else if (input[c] == 'O') 
+				{
+					board[i][c] = 2;
+					oc++;
+				}
+			}
+		}
+				
+		if (xc != oc && xc != oc + 1)
+		{
+			if (t != T - 1) 
+			{
+				getline(cin, input);
+			}
+			cout << "no\n";
+			continue;
+		}
+		
+		F0R(i, 3)
+		{
+			if (board[i][0] == board[i][1] && board[i][1] == board[i][2])
+			{
+				if (board[i][0] == 1) xw = true;
+				if (board[i][0] == 2) ow = true;
+			}
+		}
+		
+		F0R(i, 3)
+		{
+			if (board[0][i] == board[1][i] && board[1][i] == board[2][i])
+			{
+				if (board[i][0] == 1) xw = true;
+				if (board[i][0] == 2) ow = true;
+			}
+		}
+		
+		if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
+		{
+			if (board[0][0] == 1) xw = true;
+			if (board[0][0] == 2) ow = true;
+		}
+		
+		if (board[0][2] == board[1][1] && board[1][1] == board[2][0])
+		{
+			if (board[0][2] == 1) xw = true;
+			if (board[0][2] == 2) ow = true;
+		}
+		
+		
+		if (xw && ow) cout << "no\n";
+		else cout << "yes\n";
+		
+		
+		if (t != T - 1) 
+		{
+			getline(cin, input);
+		}
+	}
+	
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

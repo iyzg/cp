@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,75 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	int T; cin >> T;
+	F0R(t, T)
+	{
+		ll n, m, a, b;
+		cin >> n >> m >> a >> b;
+		vl easy, hard;
+		ll diff[n], req[n];
+		F0R(i, n) cin >> diff[i];
+		F0R(i, n) cin >> req[i];
+		
+		F0R(i, n)
+		{
+			if (diff[i]) hard.pb(req[i]);
+			else easy.pb(req[i]);
+		}
+		
+		sort(all(easy));
+		sort(all(hard));
+		queue<ll> curreasy, currhard;
+		F0R(i, sz(easy))
+		{
+			curreasy.push(easy[i]);
+		}
+		
+		F0R(i, sz(hard))
+		{
+			currhard.push(hard[i]);
+		}
+		
+		ll curr = 0, solved = 0;
+		while (curr < m)
+		{
+			if (!sz(currhard) && !sz(curreasy)) break;
+			if (sz(currhard) && sz(curreasy))
+			{
+				if (curr + a <= m && curr + a <= curreasy.front() && curr + a < currhard.front())
+				{
+					solved++;
+					curreasy.pop();
+					curr += a;
+				} else {
+					break;
+				}
+			} else if (sz(currhard)) {
+				if (curr + b <= m && curr + b <= currhard.front())
+				{
+					solved++;
+					currhard.pop();
+					curr += b;
+				} else {
+					break;
+				}
+			} else {
+				if (curr + a <= m && curr + a <= curreasy.front())
+				{
+					solved++;
+					curreasy.pop();	
+					curr += a;
+				} else {
+					break;
+				}
+			}	
+		}
+		cout << solved << "\n";
+	}
+		
+				
     return 0;
     // You should actually read the stuff at the bottom
 }

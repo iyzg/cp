@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,46 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+const int MX = 300005;
+
+int N, K, li = 0, ri = 0;
+int a[MX];
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	cin >> N >> K;
+	F0R(i, N) cin >> a[i];
+	
+	int j = 0, cnt = 0;
+	F0R(i, N)
+	{
+		if (j < i)
+		{
+			cnt = 0;
+			j = i;
+		}
+		
+		while (j < N)
+		{
+			int ncnt = cnt + !a[j];
+			if (ncnt > K) break;
+			cnt += !a[j];
+			++j;
+		}
+		
+		if (j - i > ri - li)
+		{
+			ri = j; 
+			li = i;
+		}
+		
+		if (cnt > 0) cnt -= !a[i];
+	}
+	
+	cout << ri - li << "\n";
+	FOR(i, li, ri) a[i] = 1;
+	F0R(i, N) cout << a[i] << " ";
+			
     return 0;
     // You should actually read the stuff at the bottom
 }

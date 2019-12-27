@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,38 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+ll N, invalid = 0;
+vi tree[100005];
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	cin >> N;
+	if (N % 2 == 1)
+	{
+		cout << -1;
+		return 0;
+	}
+	
+	F0R(i, N - 1)
+	{
+		int A, B;
+		cin >> A >> B;
+		tree[A - 1].pb(B - 1);
+		tree[B - 1].pb(A - 1);
+	}
+	
+	F0R(i, N)
+	{
+		int singles = 0;
+		trav(child, tree[i])
+		{
+			if (sz(tree[child]) == 1) ++singles;
+		}
+		if (singles > 1) ++invalid;
+	}
+	
+	cout << N / 2 - 1 - invalid;
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

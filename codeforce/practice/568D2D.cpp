@@ -78,7 +78,7 @@ int main() {
     }
     if (valid)
     {
-        cout << 1;
+        cout << a[0].s + 1;
         return 0;
     }
 
@@ -98,7 +98,7 @@ int main() {
     }
     if (valid)
     {
-        cout << 2;
+        cout << a[1].s + 1;
         return 0;
     }
 

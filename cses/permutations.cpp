@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,36 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+int N;
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
+	setIO();
+	cin >> N;
+	
+	
+	
+	if (N == 1)
+	{
+		cout << 1;
+		return 0;
+	} else if (N < 4) {
+		cout << "NO SOLUTION";
+		return 0;
+	}
+	
+	for(int i = 2; i <= N; i += 2)
+	{
+		cout << i << " ";
+	}
+	
+	for(int i = 1; i <= N; i += 2)
+	{
+		cout << i << " ";
+	}
+	
 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

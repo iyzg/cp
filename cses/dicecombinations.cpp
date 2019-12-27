@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,35 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+int N;
+const ll MOD = 1000000009;
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	cin >> N;
+	ll A[N];
+	
+	A[0] = 1;
+	FOR(i, 1, min(N, 6))
+	{
+		A[i] = 0;
+		F0R(j, i)
+		{
+			A[i] += A[j];
+		}
+		++A[i];
+	}
+	
+	FOR(i, 6, N)
+	{
+		A[i] = 0;
+		FOR(j, 1, 7)
+		{
+			A[i] = ((A[i] % MOD) + (A[i - j] % MOD)) % MOD;
+		}		
+	}
+	cout << A[N - 1];
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

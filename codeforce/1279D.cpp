@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,67 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
+ll n, k, toy, num = -1, den = -1;
 map<ll, ll> m;
- 
+
+const ll MOD = 998244353;
+
+long long inv(long long a, long long b){
+ return 1<a ? b - inv(b%a,a)*b/a : 1;
+}
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	cin >> n;
+	
+	vl toys[n];
+	pair<ll, ll> kf[n];
+	
+	F0R(i, n)
+	{
+		cin >> k;
+		F0R(j, k)
+		{
+			cin >> toy;
+			toys[i].pb(toy);
+			m[toy]++;
+		}
+	}
+	
+	F0R(i, n)
+	{
+		F0R(j, sz(toys[i]))
+		{
+			kf[i].f = 1;
+			kf[i].s = n;		
+			kf[i].f *= m[toys[i][j]];
+			kf[i].s = ((kf[i].s % MOD) * (sz(toys[i]) % MOD) % MOD);
+			kf[i].s = ((kf[i].s % MOD) * (n % MOD) % MOD);
+			if (num == -1 && den == -1)
+			{
+				num = kf[i].f;
+				den = kf[i].s;
+			} else {
+				if (kf[i].s == den) num += kf[i].f;
+				else {
+					ll nd = den * kf[i].s / __gcd(den, kf[i].s);
+					num *= nd / den;
+					kf[i].f *= nd / kf[i].s;
+					den = nd;
+					num += kf[i].f;
+				}
+			}
+		}
+	}			
+	
+	if (__gcd(num, den) != 1)
+	{
+		ll gcd = __gcd(num, den);
+		den /= gcd;
+		num /= gcd;
+	}
+		
+	cout << ((num % MOD) * (inv(den, MOD) % MOD)) % MOD;
     return 0;
     // You should actually read the stuff at the bottom
 }

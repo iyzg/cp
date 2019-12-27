@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,26 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+set<pair<pi, ll>> skyRB[105][105];
+set<pair<pi, ll>> skyLB[105][105];
+ll N, Q, C;
+
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	cin >> N >> Q >> C;
+	
+	F0R(i, N)
+	{
+		ll x_i, y_i, s_i;
+		cin >> x_i >> y_i >> s_i;
+		skyLB[x_i][x_i].insert(mp(mp(x_i, y_i), s_i);
+		skyRB[y_i][y_i].insert(mp(mp(x_i, y_i), s_i);
+	}
+	
+	
+	
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

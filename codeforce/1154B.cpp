@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,67 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	int n, min = 101, max = 0, different = 0; cin >> n;
+	int a[n];
+	bitset<105> seen;
+	seen.reset();
+	F0R(i, n) 
+	{
+		cin >> a[i];
+		if (!seen[a[i]])
+		{
+			seen[a[i]] = 1;
+			different++;
+		}
+		if (a[i] < min) min = a[i];
+		if (a[i] > max) max = a[i];
+	}
+	
+	if (different > 3)
+	{
+		cout << -1;
+		return 0;
+	}
+	
+	if (different == 2)
+	{
+		(max - min) % 2 == 0 ? cout << (max - min) / 2 : cout << max - min;
+		return 0;
+	}
+	
+	if (different == 1)
+	{
+		cout << 0;
+		return 0;
+	}
+	
+	
+	if ((max - min) % 2 != 0) {
+		cout << -1;
+		return 0;
+	}
+	
+	F0R(i, 100)
+	{
+		if (seen[i])
+		{
+			if (i != min && i != max && i != (min + (max - min) / 2))
+			{
+				cout << -1;
+				return 0;
+			}
+		}
+		
+	}
+	
+	cout << (max - min) / 2;
+	
+	
+	
+	
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

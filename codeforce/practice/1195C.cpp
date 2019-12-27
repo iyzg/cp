@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,33 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+const int MX = 100005;
+
+int N;
+ll a[MX], b[MX], dp[2][MX];
+
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	cin >> N;
+	F0R(i, N) cin >> a[i];
+	F0R(i, N) cin >> b[i];
+	
+	dp[0][0] = a[0];
+	dp[1][0] = b[0];
+	if (N >= 2)
+	{
+		dp[0][1] = dp[1][0] + a[1];
+		dp[1][1] = dp[0][0] + b[1];
+	}
+	
+	FOR(i, 2, N)
+	{
+		dp[0][i] = max(dp[1][i - 1] + a[i], dp[1][i - 2] + a[i]);
+		dp[1][i] = max(dp[0][i - 1] + b[i], dp[0][i - 2] + b[i]);
+	}
+	
+	cout << max(dp[0][N - 1], dp[1][N - 1]);
     return 0;
     // You should actually read the stuff at the bottom
 }

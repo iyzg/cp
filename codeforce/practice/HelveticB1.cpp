@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,38 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+template<typename T>
+bool compare(const T &a,const T &b){
+    return a.f < b.f;
+}
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	ll s, b; cin >> s >> b;
+	ll a[s];
+	F0R(i, s) cin >> a[i];
+	
+	vpl bases;
+	F0R(i, b)
+	{
+		ll b_i, g_i; cin >> b_i >> g_i;
+		bases.pb(mp(b_i, g_i));
+	}
+	
+	sort(all(bases));
+	FOR(i, 1, b)
+	{
+		bases[i].s += bases[i - 1].s;
+	}
+	
+	F0R(i, s)
+	{
+		vpl::iterator it = ub(all(bases), mp(a[i], a[i]), compare<pl>);
+		if (it == bases.begin()) cout << 0 << " ";
+		else cout << prev(it, 1)->s << " ";
+	}
+	
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

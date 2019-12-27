@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,43 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	ll a, b, c; 
+	cin >> a >> b >> c;
+	
+	ll ans = 0;
+	ll full_weeks = min(min(a / 3, b / 2), c / 2);
+	a -= (full_weeks * 3);
+	b -= (full_weeks * 2);
+	c -= (full_weeks * 2);
+	
+	str week = "FRCFCRF";
+	F0R(i, 7)
+	{
+		ll ta = a, tb = b, tc = c, used = 0;
+		F0R(j, 7)
+		{
+			if (week[(i + j) % 7] == 'F' && ta > 0) 
+			{
+				used++;
+				ta--;
+			} else if (week[(i + j) % 7] == 'R' && tb > 0) {
+				used++;
+				tb--;
+			} else if (week[(i + j) % 7] == 'C' && tc > 0) {
+				used++;
+				tc--;
+			} else {
+				break;
+			}
+		}
+		ans = max(ans, used);
+	}
+	
+	cout << (full_weeks * 7) + ans;
+	
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

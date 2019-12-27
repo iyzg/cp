@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,39 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
+	setIO();
+	int T; cin >> T;
+	F0R(t, T)
+	{
+		ll n, p, k;
+		cin >> n >> p >> k;
+		ll a[n];
+		ll dp[n] = { 0 };
+		F0R(i, n) cin >> a[i];
+		sort(a, a + n);
+		ll ans = 0;
+		F0R(i, k - 1)
+		{
+			if (i >= n) break;
+			if (i == 0) dp[i] = a[i];
+			else dp[i] += a[i] + dp[i - 1];
+			if (dp[i] <= p && i + 1 > ans) ans = i + 1;
+		}
+		
+		if (k - 1 < n) dp[k - 1] = a[k - 1];
+		if (dp[k - 1] <= p && k > ans) ans = k;
 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+		
+		FOR(i, k, n)
+		{
+			dp[i] = min(dp[i - 1] + a[i], dp[i - k] + a[i]);
+			if (dp[i] <= p && i + 1 > ans) ans = i + 1;
+		}
+		
+		cout << ans << "\n";
+	}
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

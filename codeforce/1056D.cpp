@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,41 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+vi tree[100005];
+vi cc;
+
+int dfs(int node)
+{
+	if (!sz(tree[node])) 
+	{
+		cc.pb(1);
+		return 1;
+	} else {
+		int children = 0;
+		trav(i, tree[node])
+		{
+			int cf = dfs(i);
+			children += cf;
+		}
+		cc.pb(children);
+		return children;
+	}
+}
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	int n; cin >> n;
+	F0R(i, n - 1)
+	{
+		int p; cin >> p;
+		tree[p].pb(i + 2);
+	}
+	
+	dfs(1);
+	sort(all(cc));
+	F0R(i, n)
+	{
+		cout << cc[i] << " ";
+	}
     return 0;
     // You should actually read the stuff at the bottom
 }

@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,58 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+int cnt[26] = { 0 };
+ll dp[26][5000] = {{ 0 }};
+set<pair<int, pair<char, char>>> uniquepair;
+set<pair<int, pair<char, char>>> removed;
+ld ans = 0;
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	str line; cin >> line;
+	F0R(i, sz(line))
+	{
+		cnt[line[i] - 97]++;
+		F0R(j, i)
+		{
+			// Fix this because if there are an odd number of occurences, it'll still think its unique
+			// Remove if it's no longer unique
+			if (removed.count(mp(i - j, mp(line[j], line[i])))) continue;
+			else if (uniquepair.insert(mp(i - j, mp(line[j], line[i]))).s)
+			{
+				dp[line[j] - 97][i - j - 1]++;
+			} else {
+				dp[line[j] - 97][i - j - 1]--;
+				uniquepair.erase(mp(i - j, mp(line[j], line[i])));
+				removed.insert(mp(i - j, mp(line[j], line[i])));
+			}
+		}
+	}
+	
+	trav(i, uniquepair)
+	{
+		cout << i.f << " " << i.s.f << " " << i.s.s << "\n";
+	}
+		
+	F0R(i, 26)
+	{
+		if (!cnt[i]) continue;
+		else if (cnt[i] == 1) ans++;
+		else {
+			int best = 0;
+			F0R(j, 5000)
+			{
+				if (dp[i][j] > best) best = dp[i][j];
+			}
+			
+			ans += (ld)best / sz(line);
+			// ans is actually max number of combos/sz(line) ?
+			cout << "Added " << best << " from letter " << i << "\n";
+		}
+	}
+	
+	cout << setprecision(10) << fixed << ans / sz(line);
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

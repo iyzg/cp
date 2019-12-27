@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,49 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
+int C, N, A, ans = 0;
+// Max size of C
+set<pi> cache;
+
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
+	setIO();
+	cin >> C >> N >> A;
+	queue<int> next[N];
+	int order[A];
+	
+	F0R(i, A)
+	{
+		cin >> order[i];
+		next[order[i]].push(i);
+	}
+	
+	F0R(i, A)
+	{
+		int no;
+		no = A - next[order[i]].front();
+		
+		if (cache.find(mp(no, order[i])) != cache.end())
+		{
+			cache.erase(mp(no, order[i]));
+			next[order[i]].pop();
+			sz(next[order[i]]) == 0 ? no = -1 : no = A - next[order[i]].front();
+			cache.insert(mp(no, order[i]));
+		} else if (cache.find(mp(no, order[i])) == cache.end()) {
+			if (sz(cache) == C) {
+				cache.erase(cache.begin());
+			}
+			
+			next[order[i]].pop();
+			sz(next[order[i]]) == 0 ? no = -1 : no = A - next[order[i]].front();
+			cache.insert(mp(no, order[i]));
+			++ans;
 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
+		}
 
-    cout << ans;
+	}
+	
+	cout << ans;
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

@@ -44,39 +44,46 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
+	setIO();
+	ll n, total = 0; cin >> n;
+	ll a[n];
+	F0R(i, n)
+	{
+		cin >> a[i];
+		total += a[i];
+	}
 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	if (n == 1)
+	{
+		cout << 0;
+		return 0;
+	}
+	
+	ll li = 0, ri = n - 1, ls = a[0], rs = a[n - 1];
+	ll ans = 0;
+	if (ls == rs) ans = ls;
+	
+	while (li < ri - 1)
+	{
+		if (ls < rs)
+		{
+			++li;
+			ls += a[li];
+		} else {
+			--ri;
+			rs += a[ri];
+		}
+		
+		if (ls == rs) ans = ls;
+	}
+	
+	// Doesn't work because there's a third part
+	// Slowly add from both sides? Two pointer like approach
+	
+	
+	cout << ans;
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

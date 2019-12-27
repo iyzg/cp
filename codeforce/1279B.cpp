@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,52 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+	setIO();
+	int T; cin >> T;
+	F0R(t, T)
+	{
+		ll n, time; cin >> n >> time;
+		ll a[n];
+		F0R(i, n) cin >> a[i];
+		ll versei = 0, max = -1, ans = 0, oc = 0, nc = 0;
+		while (versei < n && a[versei] <= time)
+		{
+			time -= a[versei];
+			if (a[versei] > max) 
+			{
+				max = a[versei];
+				ans = versei + 1;
+			}
+			versei++;
+			oc++;
+		}
+		
+		if (versei < n && a[versei] > max)
+		{
+			ans = versei + 1;
+			nc = oc;
+			versei++;
+		} else if (max != -1) 
+		{
+			time += max;
+			nc = oc - 1;
+		} else {
+			ans = 1;
+			versei = 1;
+		}
+		
+		while (versei < n && a[versei] <= time)
+		{
+			time -= a[versei];
+			versei++;
+			nc++;
+		}
+		
+		if (nc < oc) cout << "0\n";
+		else cout << ans << "\n";
+	}
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

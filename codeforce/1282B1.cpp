@@ -31,6 +31,8 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
+#define lb lower_bound 
+#define ub upper_bound 
 
 namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
@@ -44,39 +46,76 @@ namespace io {
  
 using namespace io;
 
-const ll MAXP = 10000000002;
-ll n, k, a_i, c = 1, calc = 1, ans = 0;
-set<ll> valid;
-map<ll, ll> m;
- 
 int main() {
-    setIO();
-    /*
-     * What to do if you can't store?
-     *  
-     */
-    cin >> n >> k;
-    while (calc < MAXP)
-    {
-        valid.insert(calc);
-        calc = pow(++c, k) + 0.5;
-    }
- 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (valid.find(a_i) != valid.end()) ans += m[a_i];
-        ++m[a_i];
-    }
+	setIO();
+	int T; cin >> T;
+	F0R(t, T)
+	{
+		ll n, p, k;
+		cin >> n >> p >> k;
+		ll a[n];
+		F0R(i, n) cin >> a[i];
+		sort(a, a + n);
+		ll abought = 0, bbought = 0;
+		
+		if (p < a[0])
+		{
+			cout << "0\n";
+			continue;
+		}
+		
+		ll ap, bp;
+		ap = p, bp = p;
+		
+		for(int i = 0; i < n; i += 2)
+		{
+			if (ap >= a[i])
+			{
+				if (i == 0) 
+				{
+					abought++;
+					ap -= a[0];
+					continue;
+				}
+				abought += 2;
+				ap -= a[i];
+			} else {
+				break;
+			}
+		}
+			
+		
+		for(int i = 1; i < n; i += 2)
+		{
+			if (bp >= a[i])
+			{
+				bbought += 2;
+				bp -= a[i];
+			} else {
+				break;
+			}
+		}
+	
+		ll in = abought;
+		while (in < n && ap >= a[in])
+		{
+			abought++;
+			ap -= a[in];
+			in++;
+		}
+	
+		in = bbought;
+		while (in < n && bp >= a[in])
+		{
+			bbought++;
+			bp -= a[in];
+			in++;
+		}
 
-    F0R(i, n)
-    {
-        cin >> a_i;
-        if (cbrt(a_i) == (int)cbrt(a_i)) ans += m[a_i];
-        ++m[a_i];
-    }
-
-    cout << ans;
+		cout << max(abought, bbought) << "\n";
+	}
+			
+	
     return 0;
     // You should actually read the stuff at the bottom
 }
