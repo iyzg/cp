@@ -38,8 +38,60 @@ const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
+int N, M, L, A, B;
+str in, agency;
+stringstream ss;
+
+bool sortbysec(const pair<int,int> &a, 
+              const pair<int,int> &b) 
+{ 
+    return (a.second < b.second); 
+}
+
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
+	int TC; cin >> TC;
+	F0R(i, TC)
+	{
+		cin >> N >> M >> L;
+		vector<pair<string, int>> agencys;
+		F0R(i, L)
+		{
+			int dp[N + 1];
+			F0R(i, N + 1) dp[i] = -1;
+			dp[N] = 0;
+			
+			cin >> in;
+			agency = in.substr(0, in.find(':'));
+			ss << in.substr(in.find(':') + 1, in.find(','));
+			ss << in.substr(in.find(',') + 1);
+			ss >> A;
+			ss >> B;
+			cout << agency << " " << A << " " << B;
+			
+			ROF(i, 1, N + 1)
+			{
+				if (dp[i / 2] == -1) dp[i / 2] = dp[i] + B;
+				else dp[i / 2] = min(dp[i / 2], dp[i] + B);
+				
+				if (dp[i - 1] == -1) dp[i] + A;
+				else dp[i - 1] = min(dp[i - 1], dp[i] + A);
+			}
+			
+			agencys.pb(mp(agency, dp[M]);
+		}
+		
+		sort(all(agencys), sortbysec);
+		// Go through agencys and print them in order
+		cout << "Case " << i + 1 << "\n";
+		F0R(i, L)
+		{
+			cout << agencys[i].f << " " << agencys[i].s << "\n";
+		}
+	}
+	
+	
+					
     return 0;
     // You should actually read the stuff at the bottom
 }

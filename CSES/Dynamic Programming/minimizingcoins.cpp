@@ -38,8 +38,31 @@ const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
+int N, X;
+int C[100], dp[MX] = { 0 };
+
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
+	cin >> N >> X;
+	F0R(i, N) 
+	{
+		cin >> C[i];
+		dp[C[i]] = 1;
+	}
+	
+	FOR(i, C[0] + 1, X + 1)
+	{
+		F0R(coin, N)
+		{
+			if (i - C[coin] >= 0 && dp[i - C[coin]])
+			{
+				if (!dp[i]) dp[i] = dp[i - C[coin]] + 1;
+				else dp[i] = min(dp[i], dp[i - C[coin]] + 1);
+			}
+		}
+	}
+	
+	dp[X] ? cout << dp[X] : cout << -1;
     return 0;
     // You should actually read the stuff at the bottom
 }

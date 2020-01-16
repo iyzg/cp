@@ -34,12 +34,35 @@ typedef vector<pl> vpl;
 #define lb lower_bound 
 #define ub upper_bound 
 
-const int MOD = 998244353;
-const ll INF = 1e18;
-const int MX = 1000001;
+int N;
+const ll MOD = 1e9 + 7;
 
 int main() {
-	cin.sync_with_stdio(0); cin.tie(0);
+    cin.sync_with_stdio(0); cin.tie(0); // fast I/O
+	cin >> N;
+	ll A[N];
+	
+	A[0] = 1;
+	FOR(i, 1, min(N, 6))
+	{
+		A[i] = 0;
+		F0R(j, i)
+		{
+			A[i] += A[j];
+		}
+		++A[i];
+	}
+	
+	FOR(i, 6, N)
+	{
+		A[i] = 0;
+		FOR(j, 1, 7)
+		{
+			A[i] = ((A[i] % MOD) + (A[i - j] % MOD)) % MOD;
+		}		
+	}
+	cout << A[N - 1];
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

@@ -34,12 +34,19 @@ typedef vector<pl> vpl;
 #define lb lower_bound 
 #define ub upper_bound 
 
-const int MOD = 998244353;
+const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 const int MX = 1000001;
 
+int N, X, coins[MX];
+
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
+	cin >> N >> X;
+	F0R(i, X) cin >> coins[i];
+	
+	// If value - coin > 0, add 1. But this doesn't work for instance coins 2, 3 for 5
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

@@ -38,8 +38,47 @@ const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
+int N, M, ans = 0;
+string row;
+int building[1005][1005] = {{ 0 }};
+bool vis[1005][1005] = {{ 0 }};
+void visit(int x, int y)
+{
+	vis[y][x] = true;
+	if (!vis[y][x + 1] && building[y][x + 1]) visit(x + 1, y);
+	if (!vis[y + 1][x] && building[y + 1][x]) visit(x, y + 1);
+	if (y > 0 && !vis[y - 1][x] && building[y - 1][x]) visit(x, y - 1);
+	if (x > 0 && !vis[y][x - 1] && building[y][x - 1]) visit(x - 1, y);
+}
+
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
+	cin >> N >> M;
+	F0R(y, N)
+	{
+		cin >> row;
+		F0R(x, M)
+		{
+			vis[y][x] = false;
+			building[y][x] = (row[x] == '.');
+		}
+	}
+	
+	F0R(y, N)
+	{
+		F0R(x, M)
+		{
+			if (!vis[y][x] && building[y][x])
+			{
+				//cout << "VISITING " << x << ", " << y << "\n";
+				visit(x, y);
+				ans++;
+			}
+		}
+	}
+				
+	cout << ans;
+	// Find number of connected components
     return 0;
     // You should actually read the stuff at the bottom
 }
