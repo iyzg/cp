@@ -1,0 +1,89 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+typedef long double ld; 
+typedef double db; 
+typedef string str; 
+
+typedef pair<int, int> pi;
+typedef pair<ll,ll> pl; 
+typedef pair<ld,ld> pd; 
+
+typedef vector<int> vi; 
+typedef vector<ll> vl;
+typedef vector<ld> vd; 
+typedef vector<str> vs; 
+typedef vector<pi> vpi;
+typedef vector<pl> vpl; 
+
+#define FOR(i,a,b) for (int i = (a); i < (b); ++i)
+#define F0R(i,a) FOR(i,0,a)
+#define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
+#define R0F(i,a) ROF(i,0,a)
+#define trav(a,x) for (auto& a: x)
+
+#define sz(x) (int)x.size()
+#define all(x) begin(x), end(x)
+#define rall(x) rbegin(x), rend(x)
+
+#define mp make_pair
+#define pb push_back
+#define f first
+#define s second
+#define lb lower_bound 
+#define ub upper_bound 
+
+const int MOD = 998244353;
+const ll INF = 1e18;
+const int MX = 1000001;
+
+namespace io {
+    void setIn(string s) { freopen(s.c_str(),"r",stdin); }
+    void setOut(string s) { freopen(s.c_str(),"w",stdout); }
+    void setIO(string s = "") {
+        ios_base::sync_with_stdio(0); cin.tie(0);
+        if (s.size()) { setIn(s+".in"), setOut(s+".out"); }
+    }
+}
+
+using namespace io;
+
+int grid[1001][1001];
+int N, K, X1, X2, Y1, Y2;
+int ans;
+
+int main() {
+	setIO("paintbarn");
+	cin >> N >> K;
+	F0R(i, N) 
+	{
+		cin >> X1 >> Y1 >> X2 >> Y2;
+		FOR(j, Y1, Y2) {
+			grid[j][X1]++;
+			grid[j][X2]--;
+		}
+	}
+	
+	F0R(i, 1001)
+	{
+		int layers = 0;
+		F0R(j, 1001) 
+		{
+			layers += grid[i][j];
+			if (layers == K) ans++;
+		}
+	}
+	
+	cout << ans;
+    return 0;
+    // You should actually read the stuff at the bottom
+}
+
+/* Stuff to Look For
+ * -----------------
+ * Int overflow, array bounds
+ * Initializing all variables, avoid weird behavior
+ * Edge cases(n = 0, n = 1)
+ * Just return 0 after result
+ */
