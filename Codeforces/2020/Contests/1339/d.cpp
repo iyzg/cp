@@ -31,48 +31,64 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
-const int MX = 1000001;
+const int MX = 100005;
 
-int T;
-str S;
+ll N, A, B, maxDepth = 0, minAns, maxAns;
+vi tree[MX];
+bool allEven = true;
 
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
+void dfs(int v, int p, int d) {
+    if (sz(tree[v]) == 1 && d % 2) allEven = false;
+    if (d > maxDepth) maxDepth = d;
+    trav(u, tree[v]) {
+        if (u != p) dfs(u, v, d + 1);
+    }
+}
+
+/* EvenDFS Vars */
+set<int> cnt;
+int regCount;
+
+void cntDfs(int v, int p, int d) {
+    if (sz(tree[v]) > 1) regCount++;
+    else if (d > 2) {
+       cnt.insert(p);
+    }
+
+    trav(u, tree[v]) {
+       if (u != p) cntDfs(u, v, d + 1);
+    }
 }
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
+    cin >> N;
+    F0R(i, N - 1) {
+        cin >> A >> B;
+        tree[A].pb(B);
+        tree[B].pb(A);
+    }
+    
+    int root = 1;
+    FOR(i, 1, N) {
+        if (sz(tree[i]) == 1) {
+            root = i;
+            break;
         }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
-	}
+    }
+    dfs(root, 0, 0);
+    cntDfs(root, 0, 0);
+    if (allEven) {
+        cout << 1 << " " << regCount + sz(cnt);
+    } else {
+        // max is number of non children + (unique odd depth) children
+        cout << 3 << " " << regCount + sz(cnt);
+    }
     return 0;
     // You should actually read the stuff at the bottom
 }

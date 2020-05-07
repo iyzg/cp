@@ -27,36 +27,17 @@ const ll INF = 1e18;
 const ll MOD = 998244353;
 const ll MX = 1000001;
 
-ll N, W;
+int K, A, B;
 
 void solve() {
-    cin >> N >> W;
-    vector<l_l> items(N);
-    for (int i = 0; i < N; i++) {
-        cin >> items[i].first >> items[i].second;
-    }
-    
-    ll dp[N + 1][W + 1];
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j <= W; j++) {
-            dp[i][j] = 0;
+    cin >> K >> A >> B;
+    for (int i = A; i <= B; i++) {
+        if (!(i % K)) {
+            cout << "OK";
+            return;
         }
     }
-    for (int item = 1; item <= N; item++) {
-        for (int capacity = 1; capacity <= W; capacity++) {
-            dp[item][capacity] = dp[item - 1][capacity];
-            ll maxWithItem = 0;
-            
-            if (capacity >= items[item - 1].first) {
-                maxWithItem = items[item - 1].second;
-                maxWithItem += dp[item - 1][capacity - items[item - 1].first];
-            }
-            
-            chmax(dp[item][capacity], maxWithItem);
-        }
-    }
-    
-    cout << dp[N][W];
+    cout << "NG";
 }
 
 int main() {

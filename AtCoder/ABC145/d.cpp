@@ -31,48 +31,40 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
-const int MOD = 998244353;
+const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
-str S;
+ll X, Y;
 
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
+ll factorization(ll x) {
+	if (x == 1) return x;
+	else return ((x % MOD) * (factorization(x - 1) % MOD)) % MOD;
 }
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
+	cin >> X >> Y;
+	if ((X + Y) % 3) {
+		cout << "0";
+		return 0;
+	} else {
+		int rightMoves = (X - (Y - X)) / 3;
+		int upMoves = X - (2 * rightMoves);
+		int totalMoves = rightMoves + upMoves;		
+		
+		ll total = 1;
+		FOR(i, 2, totalMoves + 1) {
+			total = ((total % MOD) * (i % MOD) % MOD);
 		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
+		cout << total << " " << rightMoves << " " << upMoves << "\n";
+		cout << total << " " << factorization(rightMoves) << "\n";
+		cout << total / (factorization(rightMoves) * factorization(upMoves));
 	}
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

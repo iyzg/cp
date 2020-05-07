@@ -31,48 +31,39 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+int T, N;
+ll A, B;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
+    cin >> T;
+    while(T--) {
+        cin >> N;
+        vpl a(N);
+        F0R(i, N) {
+            cin >> A >> B;
+            a[i] = mp(A, B);
         }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
+        vl discountCost(N);
+        discountCost[0] = max(a[0].f - a[N - 1].s,  (ll)0);
+        ll totalDisCost = discountCost[0];
+        FOR(i, 1, N) {
+            discountCost[i] = max(a[i].f - a[i - 1].s, (ll)0);
+            totalDisCost += discountCost[i];
         }
-		
-		cout << pref << mid << suff << "\n";
-	}
+        ll minCost = a[0].f + totalDisCost - discountCost[0];
+        FOR(i, 1, N) {
+            minCost = min(minCost, a[i].f + totalDisCost - discountCost[i]);
+        }
+        cout << minCost << "\n";
+    }
     return 0;
     // You should actually read the stuff at the bottom
 }

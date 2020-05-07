@@ -25,38 +25,39 @@ inline bool chmin(T &a, T b) {
 
 const ll INF = 1e18;
 const ll MOD = 998244353;
-const ll MX = 1000001;
+const ll MX = 100005;
 
-ll N, W;
+int N, M, A, B;
+int height[MX];
+vector<int> graph[MX];
+
+int valid(int v) {
+    if (graph[v].size() == 0) {
+        return 1;
+    }
+    
+    for (auto& u : graph[v]) {
+        if (height[u] >= height[v]) return 0;
+    }
+
+    return 1;
+}
 
 void solve() {
-    cin >> N >> W;
-    vector<l_l> items(N);
+    cin >> N >> M;
+    for (int i = 0; i < N; i++) cin >> height[i];
+    for (int i = 0; i < M; i++) {
+        cin >> A >> B;
+        A--; B--;
+        graph[A].push_back(B);
+        graph[B].push_back(A);
+    }
+    
+    int ans = 0;
     for (int i = 0; i < N; i++) {
-        cin >> items[i].first >> items[i].second;
+        ans += valid(i);
     }
-    
-    ll dp[N + 1][W + 1];
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j <= W; j++) {
-            dp[i][j] = 0;
-        }
-    }
-    for (int item = 1; item <= N; item++) {
-        for (int capacity = 1; capacity <= W; capacity++) {
-            dp[item][capacity] = dp[item - 1][capacity];
-            ll maxWithItem = 0;
-            
-            if (capacity >= items[item - 1].first) {
-                maxWithItem = items[item - 1].second;
-                maxWithItem += dp[item - 1][capacity - items[item - 1].first];
-            }
-            
-            chmax(dp[item][capacity], maxWithItem);
-        }
-    }
-    
-    cout << dp[N][W];
+    cout << ans;
 }
 
 int main() {

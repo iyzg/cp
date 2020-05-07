@@ -31,48 +31,30 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
 str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
-	}
+	cin >> S;
+	bool strong = true;
+	str rev = S;
+	reverse(all(rev));
+	if (S != rev) strong = false;
+	str fS = S.substr(0, (sz(S) - 1) / 2); 
+	str fSRev = fS; reverse(all(fSRev));
+	if (fS != fSRev) strong = false;
+	str sS = S.substr((sz(S) + 3) / 2 - 1);
+	str sSRev = sS; reverse(all(sSRev));
+	if (sS != sSRev) strong = false;
+	if (strong) cout << "Yes";
+	else cout << "No";
     return 0;
     // You should actually read the stuff at the bottom
 }

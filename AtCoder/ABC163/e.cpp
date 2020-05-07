@@ -25,38 +25,46 @@ inline bool chmin(T &a, T b) {
 
 const ll INF = 1e18;
 const ll MOD = 998244353;
-const ll MX = 1000001;
+const ll MX = 2005;
 
-ll N, W;
+int N;
+ll dp[MX][MX];
+vector<l_l> a;
+ll ans = 0;
 
 void solve() {
-    cin >> N >> W;
-    vector<l_l> items(N);
+    cin >> N;
+    a.resize(N);
     for (int i = 0; i < N; i++) {
-        cin >> items[i].first >> items[i].second;
+        cin >> a[i].first;
+        a[i].second = i;
     }
     
-    ll dp[N + 1][W + 1];
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j <= W; j++) {
-            dp[i][j] = 0;
-        }
-    }
-    for (int item = 1; item <= N; item++) {
-        for (int capacity = 1; capacity <= W; capacity++) {
-            dp[item][capacity] = dp[item - 1][capacity];
-            ll maxWithItem = 0;
+    sort(a.begin(), a.end());
+    
+    for (int l = 0; l <= N; l++) {
+        for (int r = N; r >= l; r--) {
+            int ch = r - l;
             
-            if (capacity >= items[item - 1].first) {
-                maxWithItem = items[item - 1].second;
-                maxWithItem += dp[item - 1][capacity - items[item - 1].first];
+            if (l > 0) {
+                ll tmp = dp[l - 1][r];
+                tmp += a[ch].first * abs(a[ch].second - (l - 1));
+                chmax(dp[l][r], tmp);
             }
             
-            chmax(dp[item][capacity], maxWithItem);
+            if (r < N) {
+                ll tmp = dp[l][r + 1];
+                tmp += a[ch].first * abs(r - a[ch].second);
+                chmax(dp[l][r], tmp);
+            }
+            // cout << l << " " << r << ": " << dp[l][r] << "\n";
         }
     }
     
-    cout << dp[N][W];
+    for (int i = 0; i <= N; i++) {
+        chmax(ans, dp[i][i]);
+    }
+    cout << ans;
 }
 
 int main() {

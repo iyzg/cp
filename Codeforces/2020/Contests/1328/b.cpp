@@ -31,47 +31,38 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
-const int MX = 1000001;
+const int MX = 100010;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+ll T, N, K;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
 	cin >> T;
+	ll factAdd[MX];
+	factAdd[0] = 0;
+	FOR(i, 1, MX) factAdd[i] = i + factAdd[i - 1];
 	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
+		cin >> N >> K;
+		ll before = -1;
+		F0R(i, MX) {
+			if (K <= factAdd[i]) {
+				before = i;
+				break;
+			}
 		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
+		ll secondBefore = (factAdd[before] - K);
+		char where[N];
+		F0R(i, N) where[i] = 'a';
+		where[N - before - 1] = 'b';
+		where[N - before + secondBefore] = 'b';
+		// cout << before << " " << secondBefore << "\n";
+		trav(i, where) cout << i;
+		cout << "\n";
 	}
     return 0;
     // You should actually read the stuff at the bottom

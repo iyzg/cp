@@ -31,48 +31,47 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+ll X, Y, A, B, C;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
+    cin >> X >> Y >> A >> B >> C;
+    vl a(A), b(B), c(C);
+    F0R(i, A) cin >> a[i];
+    F0R(i, B) cin >> b[i];
+    F0R(i, C) cin >> c[i];
+    sort(all(a), greater<ll>()); sort(all(b),greater<ll>()); sort(all(c), greater<ll>());
+    
+    int ai = 0, bi = 0;
+    ll ans = 0;
+    vl reds, greens;
+    F0R(i, X) reds.pb(a[i]);
+    F0R(i, Y) greens.pb(b[i]);
+    sort(all(reds)); sort(all(greens));
+    F0R(i, C) {
+        if (ai < X && bi < Y) {
+            if (reds[ai] < greens[bi] && reds[ai] < c[i]) {
+                reds[ai++] = c[i];
+            } else if (greens[bi] <= reds[ai] && greens[bi] < c[i]) {
+                greens[bi++] = c[i];
+            }
+        } else if (ai < X) {
+            if (reds[ai] < c[i]) reds[ai++] = c[i];
+        } else if (bi < Y) {
+            if (greens[bi] < c[i]) greens[bi++] = c[i];
         }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
-	}
+    }
+    
+    trav(i, reds) ans += i;
+    trav(i, greens) ans += i;
+    cout << ans;
     return 0;
     // You should actually read the stuff at the bottom
 }

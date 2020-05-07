@@ -31,48 +31,57 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
-const int MX = 1000001;
+const int MX = 100005;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+int N, A, B;
+vi tree[MX];
+map<pi, int> edges;
+vpi orderOfEdges, degrees(MX);
+set<int> treeEdgeColors[MX];
+int minColors;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
+	cin >> N;
+	FOR(i, 1, N + 1) degrees[i] = mp(0, i);
+	F0R(i, N - 1) {
+		cin >> A >> B;
+		tree[A].pb(B);
+		tree[B].pb(A);
+		degrees[A].f++; degrees[B].f++;
+		if (B < A) swap(A, B);
+		edges[mp(A, B)] = 0;
+		orderOfEdges.pb(mp(A, B));
 	}
+	
+	sort(all(degrees), greater<pi>());
+	minColors = degrees[0].f;
+	 
+	F0R(i, N) {
+		int v = degrees[i].s, color = 1;
+		trav(u, tree[v]) {
+			// Check to make sure there's no color
+			if (u < v && edges[mp(u, v)]) continue;
+			if (v < u && edges[mp(v, u)]) continue;
+			
+			while(treeEdgeColors[u].count(color) || treeEdgeColors[v].count(color)) color++;
+			treeEdgeColors[u].insert(color);
+			treeEdgeColors[v].insert(color);
+			if (u < v) edges[mp(u, v)] = color;
+			else edges[mp(v, u)] = color;
+		}
+	}
+	
+	cout << minColors << "\n";
+	F0R(i, N - 1) {
+		cout << edges[orderOfEdges[i]] << "\n";
+	}
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

@@ -27,36 +27,22 @@ const ll INF = 1e18;
 const ll MOD = 998244353;
 const ll MX = 1000001;
 
-ll N, W;
+int N, total;
+vector<int> a;
 
 void solve() {
-    cin >> N >> W;
-    vector<l_l> items(N);
+    cin >> N; a.resize(N);
     for (int i = 0; i < N; i++) {
-        cin >> items[i].first >> items[i].second;
+        cin >> a[i];
+        total += a[i];
     }
-    
-    ll dp[N + 1][W + 1];
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j <= W; j++) {
-            dp[i][j] = 0;
-        }
+    int ans = 0, avg = round(double(total) / N);
+    for (int i : a) {
+        // cout << i << " " << avg << "\n";
+        ans += pow(i - avg, 2);
+        // cout << ans << "\n";
     }
-    for (int item = 1; item <= N; item++) {
-        for (int capacity = 1; capacity <= W; capacity++) {
-            dp[item][capacity] = dp[item - 1][capacity];
-            ll maxWithItem = 0;
-            
-            if (capacity >= items[item - 1].first) {
-                maxWithItem = items[item - 1].second;
-                maxWithItem += dp[item - 1][capacity - items[item - 1].first];
-            }
-            
-            chmax(dp[item][capacity], maxWithItem);
-        }
-    }
-    
-    cout << dp[N][W];
+    cout << ans;
 }
 
 int main() {

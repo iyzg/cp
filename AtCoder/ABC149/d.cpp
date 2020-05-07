@@ -31,48 +31,40 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+int N, K, R, P, S;
+str T;
+ll ans;
+bitset<100000> used;
 
 int main() {
+    used.reset();
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
+    cin >> N >> K >> R >> S >> P >> T;
+    F0R(i, N) {
+        if (i < K) {
+            if (T[i] == 'r') ans += P;
+            if (T[i] == 's') ans += R;
+            if (T[i] == 'p') ans += S;
+            used[i] = 1;
+        } else {
+            if (T[i - K] == T[i] && used[i - K]) continue;
+            else {
+                if (T[i] == 'r') ans += P;
+                if (T[i] == 's') ans += R;
+                if (T[i] == 'p') ans += S;
+                used[i] = 1;
+            }
         }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
-	}
+    }
+    
+    cout << ans;
     return 0;
     // You should actually read the stuff at the bottom
 }

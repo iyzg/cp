@@ -31,48 +31,47 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
-const int MX = 1000001;
+const int MX = 20;
 
-int T;
-str S;
+int N;
+int a[MX];
+int x[MX][MX], y[MX][MX];
 
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
+int counter(int X) {
+    if (X == 0) return 0;
+    return counter(X >> 1) + (X & 1);
 }
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
+    cin >> N;
+    FOR(i, 1, N + 1) {
+        cin >> a[i];
+        FOR(j, 1, a[i] + 1) {
+            cin >> x[i][j] >> y[i][j];
         }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
+    }
+    
+    int ans = 0;
+    
+    for(int bits = 1; bits < (1 << N); bits++) {
+        bool ok = true;
+        for(int i = 1; i <= N; i++) {
+            // If it's not included as an honest person, not worth checking.
+            if(!(bits & (1 << (i - 1)))) continue;
+            for(int j = 1; j <= a[i]; j++) {
+                if (((bits >> (x[i][j] - 1)) & 1) ^ y[i][j]) ok = false;
+            }
         }
-		
-		cout << pref << mid << suff << "\n";
-	}
+        if (ok) ans = max(ans, counter(bits));
+    }
+    
+    cout << ans;
     return 0;
     // You should actually read the stuff at the bottom
 }

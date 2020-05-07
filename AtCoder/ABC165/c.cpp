@@ -27,36 +27,41 @@ const ll INF = 1e18;
 const ll MOD = 998244353;
 const ll MX = 1000001;
 
-ll N, W;
+int N, M, Q;
+int a[50][4];
 
 void solve() {
-    cin >> N >> W;
-    vector<l_l> items(N);
-    for (int i = 0; i < N; i++) {
-        cin >> items[i].first >> items[i].second;
+    cin >> N >> M >> Q;
+    // cout << "Q: " << Q << "\n";
+    for (int i = 0; i < Q; i++) {
+        for (int j = 0; j < 4; j++) {
+            cin >> a[i][j];
+        }
+        a[i][0]--; a[i][1]--;
     }
     
-    ll dp[N + 1][W + 1];
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j <= W; j++) {
-            dp[i][j] = 0;
-        }
-    }
-    for (int item = 1; item <= N; item++) {
-        for (int capacity = 1; capacity <= W; capacity++) {
-            dp[item][capacity] = dp[item - 1][capacity];
-            ll maxWithItem = 0;
-            
-            if (capacity >= items[item - 1].first) {
-                maxWithItem = items[item - 1].second;
-                maxWithItem += dp[item - 1][capacity - items[item - 1].first];
+    string perm = string(N, 'o') + string(M - 1, 'x');
+    int ans = 0;
+    do {
+        vector<int> arr(N);
+        int cur = 0, pos = 0;
+        for (char c : perm) {
+            if (c == 'o'){
+                arr[pos++] = cur;
+            } else {
+                cur++;
             }
-            
-            chmax(dp[item][capacity], maxWithItem);
         }
-    }
-    
-    cout << dp[N][W];
+        int score = 0;
+        for (int i = 0; i < Q; i++) {
+            if (arr[a[i][1]] - arr[a[i][0]] == a[i][2]) {
+                score += a[i][3];
+            }
+        }
+        
+        chmax(ans, score); 
+    } while (next_permutation(perm.begin(), perm.end()));
+    cout << ans;
 }
 
 int main() {

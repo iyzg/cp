@@ -27,41 +27,52 @@ const ll INF = 1e18;
 const ll MOD = 998244353;
 const ll MX = 1000001;
 
-ll N, W;
+int N, K;
 
 void solve() {
-    cin >> N >> W;
-    vector<l_l> items(N);
+    cin >> N >> K;
+    vector<char> a(N);
+    map<char, int> cnt;
     for (int i = 0; i < N; i++) {
-        cin >> items[i].first >> items[i].second;
+        cin >> a[i];
+    }
+    sort(a.begin(), a.end());
+    for (int i = K; i < N; i++) {
+        cnt[a[i]]++;
     }
     
-    ll dp[N + 1][W + 1];
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j <= W; j++) {
-            dp[i][j] = 0;
-        }
+    if (a[0] != a[K - 1]) {
+        cout << a[K - 1] << "\n";
+        return;
     }
-    for (int item = 1; item <= N; item++) {
-        for (int capacity = 1; capacity <= W; capacity++) {
-            dp[item][capacity] = dp[item - 1][capacity];
-            ll maxWithItem = 0;
-            
-            if (capacity >= items[item - 1].first) {
-                maxWithItem = items[item - 1].second;
-                maxWithItem += dp[item - 1][capacity - items[item - 1].first];
+    
+    if (K == 1) {
+        for (auto& i : a) cout << i;
+        cout << "\n";
+        return;
+    }
+    
+    cout << a[K - 1];
+    if (cnt.size() == 1) {
+        for (auto& letter : cnt) {
+            for (int i = 0; i < ceil((double)letter.second / K); i++) {
+                    cout << letter.first; 
             }
-            
-            chmax(dp[item][capacity], maxWithItem);
         }
+        cout << "\n";
+        return;
     }
     
-    cout << dp[N][W];
+    for (auto& letter : cnt) {
+        for (int i = 0; i < letter.second; i++) cout << letter.first;
+    }
+
+    cout << "\n";
 }
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-    ll T = 1; // cin >> T;
+    ll T; cin >> T;
     while (T--) solve();
     return 0;
     // You should actually read the stuff at the bottom

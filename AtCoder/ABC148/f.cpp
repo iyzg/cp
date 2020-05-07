@@ -31,48 +31,46 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
-const int MX = 1000001;
+const int MX = 100005;
 
-int T;
-str S;
+int N, U, V, A, B;
+vi tree[MX];
+int parent[MX], depth[MX], maxDepth[MX];
+ll ans;
 
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
+int dfs(int v, int p) {
+    depth[v] = depth[p] + 1;
+    int maxD = depth[v];
+    trav(u, tree[v]) {
+        if (!depth[u]) {
+            parent[u] = v;
+            maxD = max(maxD, dfs(u, v));
+        }
+    }
+    maxDepth[v] = maxD;
+    return maxD;
 }
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
-	}
+    cin >> N >> U >> V;
+    F0R(i, N - 1) {
+        cin >> A >> B;
+        tree[A].pb(B);
+        tree[B].pb(A);
+    }
+    
+    dfs(V, 0);
+    ans += (depth[U] - depth[V] - 1) / 2;
+    F0R(i, ans) U = parent[U];
+    if (depth[U] - (depth[V] + ans) == 2) ans++;
+    ans += maxDepth[U] - depth[U];
+    cout << ans;
     return 0;
     // You should actually read the stuff at the bottom
 }

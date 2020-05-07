@@ -31,48 +31,62 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+int T, N, A;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
+    cin >> T;
+    while(T--) {
+        cin >> N;
         
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
+        int ans = 0;
+        vpi pairs;
+        
+        vi a;
+        set<int> aSet, bSet;
+        int aSize = N, bSize = 0;
+        map<int, int> aCount, bCount;
+        
+        F0R(i, N) {
+            cin >> A;
+            a.pb(A);
+            aSet.insert(A);
+            aCount[A]++;
         }
-		
-		cout << pref << mid << suff << "\n";
-	}
+        
+        // Nonzero groups
+        F0R(i, N - 1) {
+            bSize++; aSize--;
+            if (aCount[a[i]] == 1) aSet.erase(a[i]);
+            aCount[a[i]]--; bCount[a[i]]++;
+            bSet.insert(a[i]);
+            // cout << "B: ";
+            // trav(j, bSet) cout << j << " ";
+            // cout << "\n";
+            // cout << "A: ";
+            // trav(j, aSet) cout << j << " ";
+            // cout << "\n";
+            
+            
+            if (*(aSet.rbegin()) == aSize && aSize == sz(aSet) && *(bSet.rbegin()) == bSize && bSize == sz(bSet)) {
+                ans++;
+                pairs.pb(mp(bSize, aSize));
+            }
+        }
+        
+        
+        cout << ans << "\n";
+        trav(i, pairs) {
+            cout << i.f << " " << i.s << "\n";
+        }
+    }
     return 0;
     // You should actually read the stuff at the bottom
 }

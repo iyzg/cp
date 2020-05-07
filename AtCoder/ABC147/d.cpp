@@ -31,48 +31,33 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
-const int MOD = 998244353;
+const int MOD = 1e9 + 7;
 const ll INF = 1e18;
-const int MX = 1000001;
+const int MX = 1e9 + 7;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+ll N;
+ll sum = 0;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
+    cin >> N;
+    vl a(N); F0R(i, N) cin >> a[i];
+    F0R(bits, 60) {
+        ll zc = 0, oc = 0;
+        ll idsum = 0;
+        F0R(j, N) {
+            if (a[j] & (1ll << bits)) oc++;
+            else zc++;
         }
-        reverse(all(suff));
+        idsum = ((oc % MOD) * (zc % MOD)) % MOD;
+        idsum = ((idsum % MOD) * ((1ll << bits) % MOD)) % MOD;;
         
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
-	}
+        sum = ((sum % MOD) + (idsum % MOD)) % MOD;
+    }
+    cout << sum % MOD;
     return 0;
     // You should actually read the stuff at the bottom
 }

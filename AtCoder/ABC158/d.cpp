@@ -27,36 +27,41 @@ const ll INF = 1e18;
 const ll MOD = 998244353;
 const ll MX = 1000001;
 
-ll N, W;
+string S;
+int Q, q, F;
+char C;
+vector<char> leftS, rightS;
 
 void solve() {
-    cin >> N >> W;
-    vector<l_l> items(N);
-    for (int i = 0; i < N; i++) {
-        cin >> items[i].first >> items[i].second;
-    }
-    
-    ll dp[N + 1][W + 1];
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j <= W; j++) {
-            dp[i][j] = 0;
-        }
-    }
-    for (int item = 1; item <= N; item++) {
-        for (int capacity = 1; capacity <= W; capacity++) {
-            dp[item][capacity] = dp[item - 1][capacity];
-            ll maxWithItem = 0;
-            
-            if (capacity >= items[item - 1].first) {
-                maxWithItem = items[item - 1].second;
-                maxWithItem += dp[item - 1][capacity - items[item - 1].first];
+    cin >> S >> Q;
+    bool forward = true;
+    while (Q--) {
+        cin >> q;
+        if (q == 1) {
+            forward = !forward;
+        } else {
+            cin >> F >> C;
+            if (F == 1) {
+                if (forward) leftS.push_back(C);
+                else rightS.push_back(C);
+            } else {
+                if (forward) rightS.push_back(C);
+                else leftS.push_back(C);
             }
-            
-            chmax(dp[item][capacity], maxWithItem);
         }
     }
-    
-    cout << dp[N][W];
+    if (forward) {
+        reverse(leftS.begin(), leftS.end());
+        for (auto& i : leftS) cout << i;
+        cout << S;
+        for (auto& i : rightS) cout << i;
+    } else {
+        reverse(rightS.begin(), rightS.end());
+        reverse(S.begin(), S.end());
+        for (auto& i : rightS) cout << i;
+        cout << S;
+        for (auto& i : leftS) cout << i;
+    }
 }
 
 int main() {

@@ -27,41 +27,26 @@ const ll INF = 1e18;
 const ll MOD = 998244353;
 const ll MX = 1000001;
 
-ll N, W;
+int N;
 
 void solve() {
-    cin >> N >> W;
-    vector<l_l> items(N);
+    cin >> N;
+    int L = 0, R = 0;
+    vector<ll> a;
+    for (int i = 1; i <= N; i++) {
+        a.push_back(pow(2, i));
+        // cout << a[i - 1] << " ";
+    } 
     for (int i = 0; i < N; i++) {
-        cin >> items[i].first >> items[i].second;
+        if (i < N / 2 - 1 || i == N - 1) R += a[i];
+        else L += a[i];
     }
-    
-    ll dp[N + 1][W + 1];
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j <= W; j++) {
-            dp[i][j] = 0;
-        }
-    }
-    for (int item = 1; item <= N; item++) {
-        for (int capacity = 1; capacity <= W; capacity++) {
-            dp[item][capacity] = dp[item - 1][capacity];
-            ll maxWithItem = 0;
-            
-            if (capacity >= items[item - 1].first) {
-                maxWithItem = items[item - 1].second;
-                maxWithItem += dp[item - 1][capacity - items[item - 1].first];
-            }
-            
-            chmax(dp[item][capacity], maxWithItem);
-        }
-    }
-    
-    cout << dp[N][W];
+    cout << R - L << "\n";
 }
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-    ll T = 1; // cin >> T;
+    ll T; cin >> T;
     while (T--) solve();
     return 0;
     // You should actually read the stuff at the bottom

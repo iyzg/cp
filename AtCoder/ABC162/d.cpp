@@ -31,48 +31,53 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
+int N;
 str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+// R, G, B
+int a[3][4000];
+ll ans;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
+    cin >> N >> S;
+    
+    F0R(i, N) {
+        if (S[i] == 'R') a[0][i]++;
+        else if (S[i] == 'G') a[1][i]++;
+        else a[2][i]++;
+        if (i > 0) {
+            F0R(j, 3) a[j][i] += a[j][i - 1];
         }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
+    }
+    
+    F0R(i, N) {
+        FOR(j, i + 1, N) {
+            char fC = S[i], sC = S[j];
+            if (sC < fC) swap(fC, sC);
+            if (fC == sC) continue;
+            if (fC == 'B' && sC == 'G') {
+                ans += a[0][N - 1] - a[0][j];
+                int diff = j - i;
+                if (j + diff < N && S[j + diff] == 'R') ans--;
+            } else if (fC == 'B' && sC == 'R') {
+                ans += a[1][N - 1] - a[1][j];
+                int diff = j - i;
+                if (j + diff < N && S[j + diff] == 'G') ans--;
+            } else {
+                ans += a[2][N - 1] - a[2][j];
+                int diff = j - i;
+                if (j + diff < N && S[j + diff] == 'B') ans--;
+            }
         }
-		
-		cout << pref << mid << suff << "\n";
-	}
+    }
+    cout << ans;
     return 0;
     // You should actually read the stuff at the bottom
 }

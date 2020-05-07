@@ -40,25 +40,36 @@ const int MX = 100005;
 
 ll U, V;
 
-void compute(ll Xo, ll S) {
-	if (S < Xo) {
-		cout << "-1";
-		return;
-	} else if (S == 0 && Xo == 0) {
-		cout << "0"; 
-	} else if (Xo == 1 && S % 2 == 1) {
-		cout << S << "\n";
-		F0R(i, S) cout << "1 ";
-	} else {
-		cout << "2\n";
-		ll x = (S - Xo) / 2;
-		cout << x << " " << (x + Xo) << "\n";
-	} 
+void solve() {
+    if (U > V) cout << -1;
+    else if (U == V) {
+        if (!U) cout << 0;
+        else {
+            cout << "1\n";
+            cout << U;
+        }
+    } else {
+        if (U % 2 != V % 2) {
+            cout << -1;
+            return;
+        }
+        
+        ll div = (V - U) / 2;
+        if ((U ^ div) == div + U) {
+            cout << "2\n";
+            cout << U + div << " " << div;
+        } else {
+            // Default case
+            cout << "3\n";
+            cout << U << " " << (V - U) / 2 << " " << (V - U) / 2;
+        }
+    }
 }
+
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
 	cin >> U >> V;
-	compute(U, V);
+	solve();
     return 0;
     // You should actually read the stuff at the bottom
 }

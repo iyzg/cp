@@ -31,48 +31,38 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+ll N, K, A;
+ll ans = 0, pre = 0;
+map<int, ll> cnts;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
+	cin >> N >> K;
+	vl prefs(N + 1); prefs[0] = 0;
+	cnts.insert({0, 1});
+	F0R(i, N) {
+		cin >> A; A--;
+		pre += A; pre %= K;
+		prefs[i + 1] = pre;
+		if(i >= K - 1) {
+			cnts[prefs[i - K + 1]]--;
 		}
 		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
+		if (cnts.count(pre)) {
+			ans += cnts[pre]; cnts[pre]++;
+		} else {
+			cnts.insert({pre, 1});
+		}		
 	}
+	
+	cout << ans;
     return 0;
     // You should actually read the stuff at the bottom
 }

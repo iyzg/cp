@@ -31,47 +31,52 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
-const int MX = 1000001;
+const int MX = 50;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+int N, M;
+int a[MX][MX], b[MX][MX];
+int k; vpi ans;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
+	cin >> N >> M;
+	F0R(i, N) {
+		F0R(j, M) {
+			cin >> a[i][j];
 		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
+	}
+	
+	F0R(i, N - 1) {
+		F0R(j, M - 1) {
+			// Add one to both for "real" coords
+			if (a[i][j] && a[i][j + 1] && a[i + 1][j] && a[i + 1][j + 1]) {
+				k++;
+				ans.pb(mp(i + 1, j + 1));
+				b[i][j] = 1;
+				b[i][j + 1] = 1;
+				b[i + 1][j] = 1;
+				b[i + 1][j + 1] = 1;
+			}
+		}
+	}
+	
+	F0R(i, N) {
+		F0R(j, M) {
+			if (a[i][j] != b[i][j]) {
+				cout << -1;
+				return 0;
+			}
+		}
+	}
+	
+	cout << k << "\n";
+	F0R(i, k) {
+		cout << ans[i].f << " " << ans[i].s << "\n";
 	}
     return 0;
     // You should actually read the stuff at the bottom

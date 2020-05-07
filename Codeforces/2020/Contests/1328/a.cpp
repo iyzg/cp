@@ -31,47 +31,31 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+ll T, A, B;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
 	cin >> T;
 	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
+		cin >> A >> B;
+		if (A == B) cout << 0 << "\n";
+		else if (A < B) {
+			cout << B - A << "\n";
+		} else {
+			if (!(A % B)) {
+				cout << 0 << "\n";
+				continue;
+			}
+			ll times = A / B; times++;
+			cout << B * times - A << "\n";
 		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
 	}
     return 0;
     // You should actually read the stuff at the bottom

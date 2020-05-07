@@ -31,48 +31,64 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
-str S;
+ll N, A, B;
+ll overlapBad, firstBad = 1, secondBad = 1;
+vpi pairs;
+map<pi, int> m;
+map<int, int> firstC, secondC;
 
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
+ll fac(int i) {
+	if (i == 1) return 1;
+	else {
+		return ((i % MOD) * (fac(i - 1) % MOD)) % MOD;
+	}
 }
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
-		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
+	cin >> N;
+	// Be CAREFUL ABOUT OVERFLOW
+	F0R(i, N) {
+		cin >> A >> B;
+		pairs.pb(mp(A, B));
+		m[mp(A, B)]++;
+		firstC[A]++;
+		secondC[B]++;
 	}
+	sort(all(pairs));
+	
+	bool both = true;
+	FOR(i, 1, N) {
+		if (pairs[i].s < pairs[i - 1].s) {
+			both = false;
+			break;
+		}
+	}
+	
+	if (both) {
+		overlapBad = 1;
+		trav(i, m) {
+			overlapBad *= fac(i.s);
+		}
+	}
+	
+	trav(i, firstC) {
+		firstBad *= fac(i.s);
+	}
+	trav(i, secondC) {
+		secondBad *= fac(i.s);
+	}
+	
+	cout << fac(N) - (secondBad - overlapBad) - firstBad;
+	
+	
     return 0;
     // You should actually read the stuff at the bottom
 }

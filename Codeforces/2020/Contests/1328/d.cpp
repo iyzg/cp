@@ -31,47 +31,71 @@ typedef vector<pl> vpl;
 #define pb push_back
 #define f first
 #define s second
-#define lb lower_bound
+#define lb lower_bound 
 #define ub upper_bound 
 
 const int MOD = 998244353;
 const ll INF = 1e18;
 const int MX = 1000001;
 
-int T;
-str S;
-
-bool is_palindrome(str s) {
-	str r = s;
-	reverse(all(r));
-	return s == r;
-}
+int Q, N;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	cin >> T;
-	while(T--) {
-		cin >> S;
-		if (sz(S) == 1) {
-			cout << S << "\n";
-			continue;
+	cin >> Q;
+	while(Q--) {
+		cin >> N;
+		int colorCnt = 1;
+		vi a(N), colors(N);
+		F0R(i, N) cin >> a[i];
+		bool allSame = true;
+		int realN = N;
+		if (a[0] == a[N - 1]) realN--;
+	
+		FOR(i, 1, N) {
+			if (a[i] != a[i - 1]) allSame = false;
 		}
-		
-        str pref = "", mid = "", suff = "";
-		F0R(i, sz(S)/2) {
-            if (S[i] == S[sz(S) - (i + 1)]) {
-                pref += S[i];
-                suff += S[i];
-            } else break;
-        }
-        reverse(all(suff));
-        
-        FOR(i, 1, sz(S) - (sz(pref) * 2) + 1) {
-            if (is_palindrome(S.substr(sz(pref), i))) mid = S.substr(sz(pref), i);
-            else if (is_palindrome(S.substr(sz(S) - sz(pref) - i, i))) mid = S.substr(sz(S) - sz(pref) - i, i);
-        }
-		
-		cout << pref << mid << suff << "\n";
+		if (allSame) {
+			cout << "1\n";
+			F0R(i, N) cout << 1 << " ";
+			cout << "\n";
+		} else if (!(realN % 2) || !(N % 2)) {
+			colors[0] = 0;
+			FOR(i, 1, N) colors[i] = !colors[i - 1];
+			cout << "2\n";
+			trav(i, colors) cout << i + 1 << " ";
+			cout << "\n";
+		} else {
+			bool bigGroup = false;
+			FOR(i, 1, N) {
+				if (a[i] == a[i - 1]) bigGroup = true;
+			}
+			
+			if (bigGroup) {
+				bool fixed = false;
+				cout << "2\n";
+				colors[0] = 0;
+				FOR(i, 1, N) {
+					if (a[i] == a[i - 1] && !fixed) {
+						colors[i] = colors[i - 1];
+						fixed = true;
+					} else {
+						colors[i] = !colors[i - 1];
+					}
+				}
+			} else {
+				cout << "3\n";
+				colors[0] = 0;
+				FOR(i, 1, N) {
+					colors[i] = !colors[i - 1];
+				}
+				colors[N - 1] = 2;
+			}
+			
+			trav(i, colors) cout << i + 1 << " ";
+			cout << "\n";
+		}
+		// Add one when printing colors
 	}
     return 0;
     // You should actually read the stuff at the bottom
