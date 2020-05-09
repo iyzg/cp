@@ -2,49 +2,99 @@
 using namespace std;
 
 typedef long long ll;
-typedef long double ld; 
-typedef double db; 
-typedef string str; 
+typedef pair<ll, ll> l_l;
+typedef pair<int, int> i_i;
 
-typedef pair<int, int> pi;
-typedef pair<ll,ll> pl; 
-typedef pair<ld,ld> pd; 
+template<class T>
+inline bool chmax(T &a, T b) {
+    if(a < b) {
+        a = b;
+        return true;
+    }
+    return false;
+}
+ 
+template<class T>
+inline bool chmin(T &a, T b) {
+    if(a > b) {
+        a = b;
+        return true;
+    }
+    return false;
+}
 
-typedef vector<int> vi; 
-typedef vector<ll> vl;
-typedef vector<ld> vd; 
-typedef vector<str> vs; 
-typedef vector<pi> vpi;
-typedef vector<pl> vpl; 
-
-#define FOR(i,a,b) for (int i = (a); i < (b); ++i)
-#define F0R(i,a) FOR(i,0,a)
-#define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
-#define R0F(i,a) ROF(i,0,a)
-#define trav(a,x) for (auto& a: x)
-
-#define sz(x) (int)x.size()
-#define all(x) begin(x), end(x)
-#define rall(x) rbegin(x), rend(x)
-
-#define mp make_pair
-#define pb push_back
-#define f first
-#define s second
-#define lb lower_bound 
-#define ub upper_bound 
-
-const int MOD = 1e9 + 7;
 const ll INF = 1e18;
-const int MX = 1000001;
+const ll MOD = 998244353;
+const ll MX = 1000001;
 
-int N;
+ll N;
+
+void solve() {
+    cin >> N;
+    vector<ll> a(N);
+    for (int i = 0; i < N; i++) cin >> a[i];
+    if (N % 2 == 0) {
+        ll dp[N][2];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < 2; j++) {
+                dp[i][j] = -INF;
+            }
+        }
+        
+        for (int i = 0; i < 2; i++) dp[i][1 - i] = a[i];
+        
+        for (int i = 0; i < N - 2; i++) {
+            for (int extras = 0; extras < 2; extras++) {
+                if (extras == 0) {
+                    chmax(dp[i + 2][0], dp[i][0] + a[i + 2]);
+                } else {
+                    chmax(dp[i + 2][1], dp[i][1] + a[i + 2]);
+                    if (i < N - 3) chmax(dp[i + 3][0], dp[i][1] + a[i + 3]);
+                }
+            }
+        }
+        
+        cout << max(dp[N - 2][1], dp[N - 1][0]);
+    } else {
+        if (N == 3) {
+            cout << max(max(a[0], a[1]), a[2]);
+            return;
+        }
+        
+        // ll ans = -INF;
+        ll dp[N][3];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < 3; j++) {
+                dp[i][j] = -INF;
+            }
+        }
+        
+        for (int i = 0; i < 3; i++) dp[i][2 - i] = a[i];
+        
+        for (int i = 0; i < N - 2; i++) {
+            for (int extras = 0; extras < 3; extras++) {
+                if (extras == 0) { 
+                    chmax(dp[i + 2][0], dp[i][0] + a[i + 2]);
+                } else if (extras == 1) {
+                    chmax(dp[i + 2][1], dp[i][1] + a[i + 2]);
+                    if (i < N - 3) chmax(dp[i + 3][0], dp[i][1] + a[i + 3]);
+                } else {
+                    chmax(dp[i + 2][2], dp[i][2] + a[i + 2]);
+                    if (i < N - 3) chmax(dp[i + 3][1], dp[i][2] + a[i + 3]);
+                    if (i < N - 4) chmax(dp[i + 4][0], dp[i][2] + a[i + 4]);
+                }
+            }
+        }
+        
+        cout << max(max(dp[N - 3][2], dp[N - 2][1]), dp[N - 1][0]);
+        
+    }
+}
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-    cin >> N;
-    vl a(N); F0R(i, N) cin >> a[i];
-    
+    ll T = 1; // cin >> T;
+    while (T--) solve();
     return 0;
     // You should actually read the stuff at the bottom
 }

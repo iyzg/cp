@@ -39,16 +39,21 @@ const ll INF = 1e18;
 const int MX = 1000001;
 
 int K;
+queue<ll> q;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
     cin >> K;
-    if (K <= 10) cout << K;
-    else {
-        K -= 10;
-        int nines = K / 3;
-        cout << 10 + nines * 9 + (K - nines);
+    for (int i = 1; i < 10; i++) q.push(i);
+    
+    for (int i = 0; i < K - 1; i++) {
+        ll v = q.front(); q.pop();
+        if (v % 10) q.push(10 * v + (v % 10) - 1);
+        q.push(10 * v + (v % 10));
+        if ((v % 10) != 9) q.push(10 * v + (v % 10) + 1);
     }
+    
+    cout << q.front();
     return 0;
     // You should actually read the stuff at the bottom
 }

@@ -47,19 +47,19 @@ void solve() {
     // If it's the last one and the one before != N
     // Store the number the thing enables, if no other o has that then it's needed
     // Set, if 
+    
+    // for (int i = 0; i < N; i++) cout << pos[i] << "\n";
     set<int> found;
     vector<int> ans;
     for (int i = N - 1; i >= 0; i--) {
         if (days[i] == 'o' && !found.count(pos[i])) {
-            bool jump = false;
             if (i == 0) {
                 ans.push_back(i + 1);
             } else if (pos[i] > pos[i - 1]) {
                 ans.push_back(i + 1);
-                jump = true;
             }
             found.insert(pos[i]);
-            if (jump) i -= C;
+            i -= C;
         }
     }
     
