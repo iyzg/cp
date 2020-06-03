@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 typedef long long ll;
 typedef pair<ll, ll> l_l;
 typedef pair<int, int> i_i;
-
+ 
 template<class T>
 inline bool chmax(T &a, T b) {
     if(a < b) {
@@ -22,30 +22,12 @@ inline bool chmin(T &a, T b) {
     }
     return false;
 }
-
+ 
 const ll INF = 1e18;
 const ll MOD = 998244353;
 const ll MX = 1000001;
-
+ 
 ll N;
-
-struct Comp1 {
-	bool operator()(const l_l &a, const l_l &b) {
-		if (a.first != b.first) {
-			return a.first < b.first;
-		}
-		return a.second > b.second;
-	}
-};
-
-struct Comp2 {
-	bool operator()(const l_l &a, const l_l &b) {
-		if (a.first != b.first) {
-			return a.first > b.first;
-		}
-		return a.second > b.second;
-	}
-};
 
 void solve() {
     cin >> N;
@@ -53,7 +35,7 @@ void solve() {
     vector<l_l> adds, subs;
     
 	int tlc = 0, trc = 0;
-
+ 
     for (int i = 0; i < N; i++) {
 		int lc = 0, rc = 0;
 		cin >> a[i];
@@ -69,11 +51,11 @@ void solve() {
 		else if (!lc && rc) trc += rc;
 		else if (lc && rc) {
 			if (lc >= rc) adds.push_back({rc, lc});
-			else subs.push_back({rc, lc});
+			else subs.push_back({lc, rc});
 		}
 	}
-    sort(adds.begin(), adds.end(), Comp1());
-    sort(subs.begin(), subs.end(), Comp2());
+	sort(adds.begin(), adds.end());
+    sort(subs.begin(), subs.end(), greater<pair<int, int>>());
     
     bool pos = true;
     for (auto& i : adds) {
@@ -87,19 +69,19 @@ void solve() {
 	}
 	
 	for (auto& i : subs) {
-		if (i.first > tlc) {
+		if (i.second > tlc) {
 			pos = false;
 			break;
 		} else {
-			tlc -= i.first;
-			tlc += i.second;
+			tlc -= i.second;
+			tlc += i.first;
 		}
 	}
     
     if (pos && tlc == trc) cout << "Yes";
     else cout << "No";
 }
-
+ 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
     ll T = 1; // cin >> T;
@@ -107,7 +89,7 @@ int main() {
     return 0;
     // You should actually read the stuff at the bottom
 }
-
+ 
 /* Stuff to Look For
  * -----------------
  * Int overflow, array bounds

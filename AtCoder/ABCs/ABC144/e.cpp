@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 typedef long long ll;
 typedef pair<ll, ll> l_l;
 typedef pair<int, int> i_i;
- 
+
 template<class T>
 inline bool chmax(T &a, T b) {
     if(a < b) {
@@ -22,49 +22,48 @@ inline bool chmin(T &a, T b) {
     }
     return false;
 }
- 
+
 const ll INF = 1e18;
 const ll MOD = 998244353;
 const ll MX = 1000001;
- 
-ll N, R, A, B;
- 
-void solve() {
-    cin >> N >> R;
-    vector<l_l> adds, subs;
-    
-    for (int i = 0; i < N; i++) {
-		cin >> A >> B;
-		if (B >= 0) adds.push_back({A, B});
-		else subs.push_back({A + B, A});
-	}
-    sort(adds.begin(), adds.end());
-    sort(subs.begin(), subs.end(), greater<l_l>());
-    
-    bool pos = true;
-    for (auto& i : adds) {
-		if (i.first > R) {
-			pos = false;
-			break;
-		} else {
-			R += i.second;
-		}
+
+ll N, K;
+vector<ll> a, f;
+
+bool pos(ll t) {
+	ll sets = 0;
+	// cout << "t: " << t << "\n";
+	
+	for (int i = 0; i < N; i++) {
+		sets += max(0ll, (ll)ceil((double)(a[i] * f[i] - t) / (double)f[i]));
 	}
 	
-	for (auto& i : subs) {
-		if (i.second > R) {
-			pos = false;
-			break;
-		} else {
-			R += i.first;
-		}
-	}
-    
-    // cout << pos << " " << R << "\n";
-    if (pos && R >= 0) cout << "YES";
-    else cout << "NO";
+	// cout << "sets: " << sets << "\n";
+	// cout << "\n";
+	return (sets <= K);
 }
- 
+
+ll bsearch(ll l, ll r) {
+	if (l == r) return l;
+	if (l + 1 == r) {
+		if (pos(l)) return l;
+		return r;
+	}
+	ll m = (l + r) / 2;
+	if (pos(m)) return bsearch(l, m);
+	else return bsearch(m + 1, r);
+}
+
+void solve() {
+    cin >> N >> K;
+    a.resize(N), f.resize(N);
+    for (auto& i : a) cin >> i;
+    for (auto& i : f) cin >> i;
+    sort(a.begin(), a.end());
+    sort(f.begin(), f.end(), greater<ll>());
+	cout << bsearch(0, 1e18);
+}
+
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
     ll T = 1; // cin >> T;
@@ -72,7 +71,7 @@ int main() {
     return 0;
     // You should actually read the stuff at the bottom
 }
- 
+
 /* Stuff to Look For
  * -----------------
  * Int overflow, array bounds

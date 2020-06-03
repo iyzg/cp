@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 typedef long long ll;
 typedef pair<ll, ll> l_l;
 typedef pair<int, int> i_i;
- 
+
 template<class T>
 inline bool chmax(T &a, T b) {
     if(a < b) {
@@ -22,49 +22,53 @@ inline bool chmin(T &a, T b) {
     }
     return false;
 }
- 
+
 const ll INF = 1e18;
 const ll MOD = 998244353;
-const ll MX = 1000001;
- 
-ll N, R, A, B;
- 
+const ll MX = 1005;
+
+int H, W;
+char c;
+int grid[MX][MX];
+bool used[MX][MX];
+
+int ans = 0;
+
+int dx[4] = {0, 1, 0, -1};
+int dy[4] = {-1, 0, 1, 0};
+
 void solve() {
-    cin >> N >> R;
-    vector<l_l> adds, subs;
+    cin >> H >> W;
     
-    for (int i = 0; i < N; i++) {
-		cin >> A >> B;
-		if (B >= 0) adds.push_back({A, B});
-		else subs.push_back({A + B, A});
-	}
-    sort(adds.begin(), adds.end());
-    sort(subs.begin(), subs.end(), greater<l_l>());
+    queue<i_i> q;
     
-    bool pos = true;
-    for (auto& i : adds) {
-		if (i.first > R) {
-			pos = false;
-			break;
-		} else {
-			R += i.second;
+    for (int i = 0; i < H; i++) {
+		for (int j = 0; j < W; j++) {
+			cin >> c;
+			if (c == '#') {
+				q.push({i, j});
+				used[i][j] = true;
+				grid[i][j] = 0;
+			}
 		}
 	}
 	
-	for (auto& i : subs) {
-		if (i.second > R) {
-			pos = false;
-			break;
-		} else {
-			R += i.first;
+	while (!q.empty()) {
+		i_i v = q.front();
+		q.pop();
+		for (int i = 0; i < 4; i++) {
+			int a = v.first + dy[i], b = v.second + dx[i];
+			if (a < 0 || a >= H || b < 0 || b >= W) continue;
+			if (used[a][b]) continue;
+			q.push({a, b});
+			used[a][b] = true;
+			grid[a][b] = grid[v.first][v.second] + 1;
+			chmax(ans, grid[a][b]);
 		}
 	}
-    
-    // cout << pos << " " << R << "\n";
-    if (pos && R >= 0) cout << "YES";
-    else cout << "NO";
+	cout << ans;
 }
- 
+
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
     ll T = 1; // cin >> T;
@@ -72,7 +76,7 @@ int main() {
     return 0;
     // You should actually read the stuff at the bottom
 }
- 
+
 /* Stuff to Look For
  * -----------------
  * Int overflow, array bounds
