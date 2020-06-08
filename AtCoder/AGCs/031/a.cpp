@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
+using ll = long long;
 const ll MOD = 1e9 + 7;
 
 namespace Modop {
@@ -37,29 +37,24 @@ namespace Modop {
 }
 
 using namespace Modop;
-
+  
 int n;
+string s;
 
-bitset<1005> val;
-vector<int> primes;
-
-void sieve() {
-	val.set();
-	for (int i = 2; i < 1005; i++) {
-		if (val[i]) {
-			primes.push_back(i);
-			for (int j = i; j < 1005; j += i) val[j] = 0;
-		}
-	}
-}
+map<char, int> m;
 
 int main() {
-	cin.sync_with_stdio(0); cin.tie(0);
-	sieve();
-    cin >> n;
-    int pcnt = 0;
-    for (auto i : primes) pcnt += (i <= n);
+    cin.sync_with_stdio(0); cin.tie(0);
+    cin >> n >> s;
     
-    cout << modExp(2, pcnt);
-    return 0;
+    for (auto& i : s) {
+        m[i]++;
+    }
+
+    ll ans = 1;
+    for (auto& i : m) {
+        ans = modMul(ans, i.second + 1);
+    }
+    ans--;
+    cout << ans;
 }

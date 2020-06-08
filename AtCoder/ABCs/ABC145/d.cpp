@@ -34,35 +34,75 @@ typedef vector<pl> vpl;
 #define lb lower_bound 
 #define ub upper_bound 
 
-const int MOD = 1e9 + 7;
+const ll MOD = 1e9 + 7;
 const ll INF = 1e18;
-const int MX = 1000001;
+const ll MX = 2000005;
+
+namespace Modop {
+    ll modAdd(ll a, ll b) {
+        return (a + b) % MOD;
+    }
+    
+    ll modSub(ll a, ll b) {
+        return (((a - b) % MOD) + MOD) % MOD;
+    }
+    
+    ll modMul(ll a, ll b) {
+        return ((a % MOD) * (b % MOD)) % MOD;
+    }
+
+    ll modExp(ll base, ll power) {
+        if (power == 0) {
+            return 1;
+        } else {
+            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
+            if (power % 2 == 1) cur = cur * base;
+            cur = cur % MOD;
+            return cur;
+        }
+    }
+    
+    ll modInv(ll a) {
+        return modExp(a, MOD - 2);
+    }
+    
+    ll modDiv(ll a, ll b) {
+        return modMul(a, modInv(b));
+    }
+}
+
+using namespace Modop;
 
 ll X, Y;
+ll fac[MX];
 
-ll factorization(ll x) {
-	if (x == 1) return x;
-	else return ((x % MOD) * (factorization(x - 1) % MOD)) % MOD;
+void pre() {
+    fac[0] = fac[1] = 1;
+    for (int i = 2; i < MX; i++) {
+        fac[i] = modMul(i, fac[i - 1]);
+    }
 }
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
+    pre();
 	cin >> X >> Y;
 	if ((X + Y) % 3) {
 		cout << "0";
 		return 0;
 	} else {
-		int rightMoves = (X - (Y - X)) / 3;
-		int upMoves = X - (2 * rightMoves);
-		int totalMoves = rightMoves + upMoves;		
+		ll rightMoves = (X - (Y - X)) / 3;
+		ll upMoves = X - (2 * rightMoves);
+        if (rightMoves < 0 || upMoves < 0) {
+            cout << 0;
+            return 0;
+        }
+		ll totalMoves = rightMoves + upMoves;		
 		
-		ll total = 1;
-		FOR(i, 2, totalMoves + 1) {
-			total = ((total % MOD) * (i % MOD) % MOD);
-		}
-		cout << total << " " << rightMoves << " " << upMoves << "\n";
-		cout << total << " " << factorization(rightMoves) << "\n";
-		cout << total / (factorization(rightMoves) * factorization(upMoves));
+        ll ans = fac[totalMoves];
+        ans = modDiv(ans, fac[rightMoves]);
+        ans = modDiv(ans, fac[totalMoves - rightMoves]);
+        cout << ans;
 	}
 	
     return 0;
@@ -74,5 +114,4 @@ int main() {
  * Int overflow, array bounds
  * Initializing all variables, avoid weird behavior
  * Edge cases(n = 0, n = 1)
- * Just return 0 after result
- */
+ * Just return 0 after result */
