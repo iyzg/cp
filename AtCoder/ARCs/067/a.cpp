@@ -43,24 +43,38 @@ int n;
 bitset<1005> val;
 vector<int> primes;
 
+map<ll, ll> cnt;
+
 void sieve() {
-	val.set();
-	for (int i = 2; i < 1005; i++) {
-		if (val[i]) {
-			primes.push_back(i);
-			for (int j = i; j < 1005; j += i) val[j] = 0;
-		}
-	}
+    val.set();
+    for (int i = 2; i < 1005; i++) {
+        if (val[i]) {
+            primes.push_back(i);
+            for (int j = i * i; j < 1005; j += i) val[j] = 0;
+        }
+    }   
 }
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
-	sieve();
+    sieve();
     cin >> n;
-    // int pcnt = 0;
-    // for (auto i : primes) pcnt += (i <= n);
-    
-    cout << modExp(2, n - 1);
+    for (int i = 2; i <= n; i++) {
+        int num = i;
+        for (auto& prime : primes) {
+            while (num % prime == 0) {
+                cnt[prime]++;
+                num /= prime;
+            }
+        }
+        
+        if (num != 1) cnt[num]++;
+    }
+    ll ans = 1;
+    for (auto i : cnt) {
+        ans = modMul(ans, i.second + 1);
+    }
+    cout << ans;
     return 0;
 }
 
