@@ -4,40 +4,34 @@ using ll = long long;
 const ll LIM = 1e9;
 
 ll s;
-bitset<10000> val;
-vector<ll> primes;
-
-void sieve() {
-    val.set();
-    for (int i = 2; i < 10000; i++) {
-        if (val[i]) {
-            primes.push_back(i);
-            for (int j = 2 * i; j < 10000; j += i) val[j] = false;
-        }
-    }
-}
 
 int main() {
     cin.sync_with_stdio(0); cin.tie(0);
-    sieve();
     cin >> s;
-    ll x2 = 1, x3, y2 = 1, y3;
-    
-    if (s % 10 == 0) x3 = 0;
-    else x3 = 10 - (s % 10);
+    string ss = to_string(s);
+    int n = ss.length();
+    // cout << n << endl;
 
-    y3 = (s + x3);
-    
-    // reverse(primes.begin(), primes.end()) c
-    for (auto prime : primes) {
-        while (y3 > LIM && y3 % prime == 0 && x2 * prime <= LIM) {
-            cout << y3 << ' ' << prime << '\n';
-            y3 /= prime;
-            x2 *= prime;
-        }
-        if (y3 <= LIM) break;
+    if (n == 19) {
+        cout << "0 0 1000000000 1 0 1000000000";
+        return 0;
+    } 
+
+    ll si = 0;
+    for (int i = 0; i < n / 2; i++) {
+        if (ss[n - i - 1] == '0') continue;
+        si += (10 - (ss[n - i - 1] - '0')) * powl(10, i);
+        s += (10 - (ss[n - i - 1] - '0')) * powl(10, i);
+        ss = to_string(s);
     }
+
+    // cout << "SI" << si << '\n';
+
+    n = ss.length();
     
-    // cout << x2 * y3 - x3 * y2 << '\n';
+    // x2 * y3 - x3 - y2
+    ll x3 = si, y2 = 1;
+    int uhalf = ceil((double)n / 2);
+    string x2 = ss.substr(0, uhalf) , y3 = "1" + ss.substr(uhalf, n - uhalf);
     cout << "0 0 " << x2 << ' ' << y2 << ' ' << x3 << ' ' << y3;
 }
