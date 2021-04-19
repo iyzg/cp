@@ -11,19 +11,17 @@ typedef vector<int> vi;
 const long double PI = atan(1)*4;
 
 int n;
-int points[2][2];
+long double ax, ay, bx, by;
 
 int main() {
 	cin.tie(0)->sync_with_stdio(0);
-    cin >> n;
-    rep(i, 0, 2)
-        rep(j, 0, 2)
-            cin >> points[i][j];
-
-    long double c = (long double)180 - (180 * (n - 2) / (long double)n);
-    int dx = points[0][0] - points[1][0];
-    int dy = points[0][1] - points[1][1];
-    long double side = sqrt((long double)(dx * dx + dy * dy)) / 2;
-    long double clen = 2 * side * side - 2 * side * side * cos(c * 180 / PI);
-    cout << c << ' ' << side << clen;
+    cin >> n >> ax >> ay >> bx >> by;
+    long double mx = (ax + bx) / 2.0;
+    long double my = (ay + by) / 2.0;
+    long double dist = sqrt(pow(ax - mx, 2) + pow(ay - my, 2)); 
+    // cout << mx << ' ' << my << ' ' << dist << endl;
+    long double azimuth = atan2(ay - my, ax - mx);
+    azimuth += (2.0 * PI) / n;
+    // cout << azimuth * 180 / PI;
+    cout << fixed << setprecision(5) << mx + dist * cos(azimuth) << ' ' << my + dist * sin(azimuth);
 }
