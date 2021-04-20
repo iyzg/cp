@@ -35,16 +35,28 @@ int main() {
     }
 
     if (to_r[1] != 1 || to_l[n - 1] != 1) {
-        cout << -1;
+        cout << "-1";
         return 0;
     }
 
-    for (int i = n - 1; i > 0; --i) {
+    vector<int> ops;
+    for (int i = n - 1; i >= 0; --i) {
         if (a[i] != i + 1) {
             for (int j = loc[i + 1]; j < i; ++j) {
                 swap(a[j], a[j + 1]);
-                cout << j + 1 << '\n';
+                ops.push_back(j + 1);
             }
         }
+    }
+
+    for (int i = 0; i < n; ++i) {
+        if (a[i] != i + 1) {
+            cout << "-1";
+            return 0;
+        }
+    }
+
+    for (auto i : ops) {
+        cout << i << '\n';
     }
 }
