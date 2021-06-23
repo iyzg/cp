@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-folders=(ac/ cf/ cses/ usaco/)
+folders=(ac/ cf/ cses/ ucf/ usaco/)
 
 for folder in "${folders[@]}"; do
     cd ${folder}
