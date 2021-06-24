@@ -21,53 +21,68 @@ using namespace io;
 
 const int MX = 1e5 + 5;
 
-int cur, cnt, pv[MX], par[MX];
-set<int> conn[MX];
+int reach[MX], vis[MX];
+vector<int> in[MX], out[MX];
+
+void dfs(int v) {
+    reach[v] = 1;
+    for (auto u : out[v]) {
+        if (!reach[u]) {
+            dfs(u);
+            reach[v] += reach[u];
+        }
+    }
+}
 
 void solve() {
     int n, m;
     cin >> n >> m;
     for (int i = 0; i < n; ++i) {
-        conn[i].clear();
+        in[i].clear();
+        out[i].clear();
+        reach[i] = 0;
+        vis[i];
     }
 
     for (int i = 0; i < m; ++i) {
         int a, b;
         cin >> a >> b;
-        conn[a].insert(b);
+        out[a].push_back(b);
+        in[b].push_back(a);
     }
-    
+
+    set<int> valid;
+    dfs(0);
+
     queue<int> q;
     vector<bool> used(n);
 
-    queue.push(0);
+    q.push(0);
     used[0] = true;
 
-    ++cnt;
-    if (dfs(0) < n) {
-        cout << "Confused\n\n";
-        return;
-    }
-
-    val.insert(0);
-    for (auto i : pos) {
-        int node = i;
-        while (node) {
-            val.insert(node);
-            node = par[node];
+    while (!q.empty()) {
+        int v = q.front();
+        q.pop();
+        if (reach[v] == n) val.insert(v);
+        for (auto u : in[v]) {
+            if (!used[u]) {
+                q.push(u);
+                if (reach[u] > 0) reach[u] = reach[v];
+                else reach[u] = reach[v] += 1;
+            }
         }
     }
 
-    for (auto i : val) {
-        cout << i << '\n';
-    }
+
+    if (sz(valid)) {
+        for (auto i : valid) cout << i << '\n';
+    } else cout << "Confused\n";
     cout << '\n';
 }
 
 int main() {
     cin.tie(0)->sync_with_stdio(0);
     int c; cin >> c;
-    for (int i = 0; i < MX; ++i) pv[i] = -1;
 
     for (int i = 0; i < c; ++i) {
         solve();

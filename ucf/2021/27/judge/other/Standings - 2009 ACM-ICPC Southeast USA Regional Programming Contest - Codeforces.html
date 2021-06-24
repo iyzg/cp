@@ -1,0 +1,7405 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="X-Csrf-Token" content="3e2af8bedb7bf02e73655c77121aea9a"/>
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=0.01"/>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery-1.8.3.js"></script>
+    <script type="application/javascript">
+        function adjustViewport() {
+            var screenWidthPx = Math.min($(window).width(), window.screen.width);
+            var siteWidthPx = 1100; // min width of site
+            var ratio = Math.min(screenWidthPx / siteWidthPx, 1.0);
+            var viewport = "width=device-width, initial-scale=" + ratio;
+            $('#viewport').attr('content', viewport);
+            var style = $('<style>html * { max-height: 1000000px; }</style>');
+            $('html > head').append(style);
+        }
+
+        if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+            adjustViewport();
+        }
+    </script>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="profileName" content="c2">
+    <meta name="google-site-verification" content="OTd2dN5x4nS4OPknPI9JFg36fKxjqY0i1PSfFPv_J90"/>
+    <meta property="fb:admins" content="100001352546622" />
+    <meta property="og:image" content="http://st.codeforces.com/s/15922/images/codeforces-telegram-square.png" />
+    <link rel="image_src" href="http://st.codeforces.com/s/15922/images/codeforces-telegram-square.png" />
+    <meta property="og:title" content="Standings - 2009 ACM-ICPC Southeast USA Regional Programming Contest - Codeforces"/>
+    <meta property="og:description" content=""/>
+    
+    <meta property="og:site_name" content="Codeforces"/>
+    <meta name="uc" content="b43a81c98e5c78c0b589b1d7eef5d398d098c2ad"/>
+    
+    <meta name="cc" content="42542ca4b728fecdef1182345ef766c6eb00fa25"/>
+    <meta name="pc" content="e80ce4ea91d6a7b9afd8114ba31dbbd65df5133f"/>
+    
+    <meta name="utc_offset" content="+03:00"/>
+    <meta name="verify-reformal" content="f56f99fd7e087fb6ccb48ef2" />
+    <title>Standings - 2009 ACM-ICPC Southeast USA Regional Programming Contest - Codeforces</title>
+        <meta name="description" content="Codeforces. Programming competitions and contests, programming community" />
+        <meta name="keywords" content="programming algorithm contest competition informatics olympiads c++ java graphs vkcup" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/font-awesome.min.css" type="text/css" charset="utf-8" />
+
+        <link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Cuprum&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+
+    <link rel="shortcut icon" type="image/png" href="http://st.codeforces.com/s/15922/favicon.png">
+
+    <!--CombineResourcesFilter-->
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/prettify.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/clear.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/ttypography.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/problem-statement.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/second-level-menu.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/roundbox.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/datatable.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/table-form.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/topic.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/jquery.jgrowl.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/facebox.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/jquery.wysiwyg.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/jquery.autocomplete.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/codeforces.datepick.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/colorbox.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/jquery.drafts.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/status.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="http://st.codeforces.com/s/15922/css/community.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/moment.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/pushstream.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.lavalamp.min.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.swipe.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/facebox.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.wysiwyg.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/controls/wysiwyg.colorpicker.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/controls/wysiwyg.table.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/controls/wysiwyg.image.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/controls/wysiwyg.link.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.datepick.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.ie6blocker.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.ba-bbq.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/jquery.drafts.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/sjcl.js"></script>
+    <script type="text/javascript" src="/scripts/d12beb6ca95da1a4ee9175e9d920f701/en/codeforces-options.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/js/codeforces.js?v=20160131"></script>
+    <!--/CombineResourcesFilter-->
+
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/markitup/skins/markitup/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="http://st.codeforces.com/s/15922/markitup/sets/markdown/style.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/markitup/jquery.markitup.js"></script>
+    <script type="text/javascript" src="http://st.codeforces.com/s/15922/markitup/sets/markdown/set.js"></script>
+
+    <!--[if IE]>
+    <style>
+        #sidebar {
+            padding-left: 1em;
+            margin: 1em 1em 1em 0;
+        }
+    </style>
+    <![endif]-->
+
+        <script id="nocomb.jquery.scrollTo-min.js" src="http://st.codeforces.com/s/15922/js/jquery.scrollTo-min.js" type="text/javascript"></script>
+
+</head>
+<body><span style='display:none;' class='csrf-token' data-csrf='3e2af8bedb7bf02e73655c77121aea9a'>&nbsp;</span>
+<div class="button-up" style="display: none; opacity: 0.7; width: 50px; height:100%; position: fixed; left: 0; top: 0; cursor: pointer; text-align: center; line-height: 35px; color: #d3dbe4; font-weight: bold; font-size: 3.0rem;"><i class="icon-circle-arrow-up"></i></div>
+
+<!-- Codeforces JavaScripts. -->
+<script type="text/javascript">
+    var queryMobile = Codeforces.queryString.mobile;
+    if (queryMobile === "true" || queryMobile === "false") {
+        Codeforces.putToStorage("useMobile", queryMobile == "true");
+    } else {
+        var useMobile = Codeforces.getFromStorage("useMobile");
+        if (useMobile === true || useMobile === false) {
+            if (useMobile != false) {
+                Codeforces.redirect(Codeforces.updateUrlParameter(document.location.href, "mobile", useMobile));
+            }
+        }
+    }
+</script>
+<script type="text/javascript">
+    if (window.parent.frames.length > 0) {
+        window.stop();
+    }
+</script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+    (function () {
+        jQuery.expr[':'].containsCI = function(elem, index, match) {
+            return !match || !match.length || match.length < 4 || !match[3] || (
+                    elem.textContent || elem.innerText || jQuery(elem).text() || ''
+            ).toLowerCase().indexOf(match[3].toLowerCase()) >= 0;
+        }
+    }(jQuery));
+
+    $.ajaxPrefilter(function(options, originalOptions, xhr) {
+        var csrf = Codeforces.getCsrfToken();
+
+        if (csrf) {
+            var data = originalOptions.data;
+            if (originalOptions.data !== undefined) {
+                if (Object.prototype.toString.call(originalOptions.data) === '[object String]') {
+                    data = $.deparam(originalOptions.data);
+                }
+            } else {
+                data = {};
+            }
+            options.data = $.param($.extend(data, { csrf_token: csrf }));
+        }
+    });
+
+    window.getCodeforcesServerTime = function(callback) {
+        $.post("/data/time", {}, callback, "json");
+    }
+
+    window.updateTypography = function () {
+        $("div.ttypography code").addClass("tt");
+        $("div.ttypography pre>code").addClass("prettyprint").removeClass("tt");
+        $("div.ttypography table").addClass("bordertable");
+        prettyPrint();
+    }
+
+    $.ajaxSetup({ scriptCharset: "utf-8" ,contentType: "application/x-www-form-urlencoded; charset=UTF-8", headers: {
+        'X-Csrf-Token': Codeforces.getCsrfToken()
+    }});
+
+    window.updateTypography();
+
+    Codeforces.signForms();
+
+    setTimeout(function() {
+        $(".second-level-menu-list").lavaLamp({
+            fx: "backout",
+            speed: 1000
+        });
+    }, 0);
+
+
+    Codeforces.countdown();
+    $("a[rel='photobox']").colorbox();
+
+        var count = 0;
+
+        function getDelay() {
+            var delay = 0;
+            var last = Codeforces.getFromStorage("LastOnlineTimeUpdaterMillis", 0);
+            if (last && last != null) {
+                var period = count < 20 ? 180 * 1000 : 360 * 1000;
+                delay = period - (new Date().getTime() - last);
+                if (delay < 0)
+                    delay = 0;
+            }
+            return delay;
+        }
+
+        window.setInterval(function () {
+            if (getDelay() <= 0 && count < 120) {
+                ++count;
+                Codeforces.ping("/data/update-online");
+            }
+        }, 5000);
+
+        var handle = "dannik";
+        $("a.rated-user:contains(" + handle + "), span.participant:contains(" + handle + ")").each(function () {
+            if ($(this).text() == handle) {
+                var td = $(this).parent();
+                var tr = $(this).parent().parent();
+                if (td.is("td") && tr.is("tr")) {
+                    tr.addClass("highlighted-row");
+                }
+            }
+        });
+
+    function showAnnouncements(json) {
+        info("j=" + JSON.stringify(json));
+
+        if (json.t != "a") {
+            return;
+        }
+        console.log("Got announcement from channel");
+        setTimeout(function() {
+            Codeforces.showAnnouncements(json.d, "en");
+        }, Math.random() * 500);
+    }
+    if (Codeforces.getParticipantChannel()) {
+        Codeforces.subscribe(Codeforces.getParticipantChannel(), function(json) {
+            showAnnouncements(json);
+        });
+    }
+
+    if (Codeforces.getContestChannel()) {
+        Codeforces.subscribe(Codeforces.getContestChannel(), function(json) {
+            showAnnouncements(json);
+        });
+    }
+
+    if (Codeforces.getGlobalChannel()) {
+        Codeforces.subscribe(Codeforces.getGlobalChannel(), function(json) {
+            showAnnouncements(json);
+        });
+    }
+
+    if (Codeforces.getUserChannel()) {
+        Codeforces.subscribe(Codeforces.getUserChannel(), function(json) {
+            showAnnouncements(json);
+        });
+    }
+
+    $(".clickable-title").click(function() {
+        Codeforces.alert($(this).attr("title"));
+    }).css("position", "relative").css("bottom", "3px");
+
+
+    Codeforces.reformatTimes();
+    Codeforces.initializePubSub();
+
+    Codeforces.setupSpoilers();
+    Codeforces.setupTutorials("/data/problemTutorial");
+        });
+    </script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-743380-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = (document.location.protocol == 'https:' ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<div id="body">
+        <script type="text/javascript">
+            $(function() {
+                window._ftaa = "g54ot2jwobmpzybaf7";
+            })
+        </script>
+
+        <script type="text/javascript">
+            $(function() {
+                window._bfaa = "1cfe0e7bdc267524b90c9a4f0d54d4a0";
+            });
+        </script>
+        
+<div id="header" style="position: relative;">
+    <div style="float:left;">
+            <a href="/"><img src="http://st.codeforces.com/s/15922/images/codeforces-logo-with-telegram.png"/></a>
+
+    </div>
+    <div class="lang-chooser">
+        <div style="text-align: right;">
+            <a href="?locale=en"><img src="http://st.codeforces.com/s/15922/images/flags/24/gb.png" title="In English" alt="In English"/></a>
+            <a href="?locale=ru"><img src="http://st.codeforces.com/s/15922/images/flags/24/ru.png" title="По-русски" alt="По-русски"/></a>
+        </div>
+        <div>
+                    <a href="/profile/dannik">dannik</a>
+                     | 
+                    <a href="/e29e4d15e7d9f26cc2415f2dea833d18/logout">Logout</a>
+                    
+        </div>
+
+
+
+    </div>
+    <br style="clear: both;"/>
+</div>
+
+
+        
+
+    <div class="roundbox menu-box" style="">
+            <div class="roundbox-lt">&nbsp;</div>
+            <div class="roundbox-rt">&nbsp;</div>
+            <div class="roundbox-lb">&nbsp;</div>
+            <div class="roundbox-rb">&nbsp;</div>
+    <div class="menu-list-container">
+    <ul class="menu-list main-menu-list">
+                <li class=""><a href="/">Home</a></li>
+                <li class=""><a href="/contests">Contests</a></li>
+                <li class="current"><a href="/gyms">Gym</a></li>
+                <li class=""><a href="/problemset">Problemset</a></li>
+                <li class=""><a href="/groups">Groups</a></li>
+                <li class=""><a href="/ratings">Rating</a></li>
+                <li class=""><a href="/api/help">API</a></li>
+                <li class=""><a href="/canadacup2016">Canada Cup <img class="icon" src="http://st.codeforces.com/images/icons/cup.png"/></a></li>
+                <li class=""><a href="/sections">Sections</a></li>
+    </ul>
+        <form method="post" action="/search"><input type='hidden' name='csrf_token' value='3e2af8bedb7bf02e73655c77121aea9a'/>
+            <input class="search" name="query" data-isPlaceholder="true" value=""/>
+        </form>
+    <br style="clear: both;"/>
+</div>
+
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input.search").focus(function () {
+                if ($(this).attr("data-isPlaceholder") === "true") {
+                    $(this).val("");
+                    $(this).removeAttr("data-isPlaceholder");
+                }
+            });
+        });
+    </script>
+    <div style="margin:1em;text-align: center;" class="alert alert-success" data-infoBarId="16">
+        <i class="icon-star"></i> Because of incorrect settings, the registrations on Canada Cup 2016 made on October 20 are canceled. Please, register again. Sorry for it.
+        <span class="infobar-close" style="float: right; cursor: pointer; font-size: 1.4em;">&times;</span>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+    $(".infobar-close").click(function () {
+        $(this).parent().fadeOut();
+        $.post("/data/infobars", {action: "hide", infoBarId: $(this).parent().attr("data-infoBarId")}, function (response) {
+            // No operations.
+        }, "json");
+    });
+        });
+    </script>
+            <br style="height: 3em; clear: both;"/>
+
+        <div style="position: relative;">
+                <div id="pageContent">
+                    <div class="second-level-menu">
+<ul class="second-level-menu-list">
+        <li><a
+                                        href="/gym/100182">Problems</a></li>
+        <li class="noLava"><a>|</a></li>
+        <li class="current selectedLava"><a
+                                        href="/gym/100182/standings">Common standings</a></li>
+        <li><a
+                                        href="/gym/100182/standings/friends/true">Friends standings</a></li>
+</ul>
+</div>
+
+<script type="application/javascript">
+    $(function() {
+        $(".closeUserList").click(function() {
+            document.location = Codeforces.updateUrlParameter(document.location.href, "list", "");
+            return false;
+        });
+    })
+</script>
+<div style="float: right; position: relative; bottom: 3em; font-size: 1.0rem;">
+        <form action="" method="post" class="toggle-show-unofficial" style="margin-top: 0.5em;"><input type='hidden' name='csrf_token' value='3e2af8bedb7bf02e73655c77121aea9a'/>
+            <input type="hidden" name="action" value="toggleShowUnofficial"/>
+            <input type="hidden" name="newShowUnofficialValue" value="true"/>
+            <input name="showUnofficial" id="showUnofficial" type="checkbox" />
+            <label for="showUnofficial" style="position: relative; bottom: 0.4em;">show unofficial</label>
+        </form>
+</div>
+<br style="clear: right;"/>
+
+<style type="text/css">
+    .cell-accepted {
+        color: #0a0;
+        font-weight: bold;
+    }
+
+    .cell-rejected {
+        color: #00a;
+    }
+
+    .cell-time {
+        font-size: 1.0rem;
+        display: block;
+    }
+
+    .contest-name {
+        font-size: 1.5em;
+        color: #445f9d;
+    }
+
+    .successfulChallengeCount {
+        color: green;
+    }
+
+    .unsuccessfulChallengeCount {
+        color: gray;
+    }
+</style>
+
+<div style="margin: 0.5em auto; width: 100%;text-align:center;">
+    <div class="contest-name" style="margin:0.5em auto;">
+        <a style="color: #445f9d; text-decoration: none" href="/gym/100182">
+2009 ACM-ICPC Southeast USA Regional Programming Contest        </a>
+    </div>
+        <span class="contest-status">Final standings</span>
+    
+</div>
+
+<div style="text-align:right;color:#888;font-size:1.1rem;margin-bottom:0.25em;">
+    <div style="width:35em;margin-left:auto;">Double click (or ctrl+click) each entry to view its submission history</div>
+</div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+    var participantId = window.location.hash.replace("#", "") || "";
+    if (participantId != "" && participantId[0] == 'p') {
+        var row = $("tr[participantId='" + participantId.substring(1) + "']");
+        $('html, body').animate({
+          'scrollTop': Math.max(0, row.offset().top - ($(window).height() - row.height()) / 2)
+        });
+    }
+        });
+    </script>
+
+<div class="datatable"
+     
+     style="background-color: #E1E1E1; padding-bottom: 3px;">
+            <div class="lt">&nbsp;</div>
+            <div class="rt">&nbsp;</div>
+            <div class="lb">&nbsp;</div>
+            <div class="rb">&nbsp;</div>
+
+            <div style="padding: 4px 0 0 6px;font-size:1.4rem;position:relative;">
+                Standings
+                    <i style="cursor: pointer; font-size: 1.5rem; position: relative; top: 2px;" class="icon-list userListMarker"></i>
+
+                <div style="position:absolute;right:0.25em;top:0.35em;">
+                    <span style="padding:0;position:relative;bottom:2px;" class="rowCount"></span>
+
+                    <img class="closed" src="http://st.codeforces.com/s/15922/images/icons/control.png"/>
+
+                    <span class="filter" style="display:none;">
+                        <img class="opened" src="http://st.codeforces.com/s/15922/images/icons/control-270.png"/>
+                        <input style="padding:0;position:relative;bottom:2px;border:1px solid #aaa;height:17px;font-size:1.3rem;"/>
+                    </span>
+                </div>
+            </div>
+            <div style="background-color: white;margin:0.3em 3px 0 3px;position:relative;">
+            <div class="ilt">&nbsp;</div>
+            <div class="irt">&nbsp;</div>
+            <table class="standings">
+<tr>
+    <th style="width:2em;">#</th>
+    <th style="text-align:left;">Who</th>
+    <th style="width:2em;">=</th>
+    <th style="width:4em;">Penalty</th>
+    <th style="width:4em;">
+            <a title="A - Block Game"
+           href="/gym/100182/problem/A">A</a>
+    </th>
+    <th style="width:4em;">
+            <a title="B - Euclid"
+           href="/gym/100182/problem/B">B</a>
+    </th>
+    <th style="width:4em;">
+            <a title="C - Museum Guards"
+           href="/gym/100182/problem/C">C</a>
+    </th>
+    <th style="width:4em;">
+            <a title="D - Knitting"
+           href="/gym/100182/problem/D">D</a>
+    </th>
+    <th style="width:4em;">
+            <a title="E - Minesweeper"
+           href="/gym/100182/problem/E">E</a>
+    </th>
+    <th style="width:4em;">
+            <a title="F - The Ninja Way"
+           href="/gym/100182/problem/F">F</a>
+    </th>
+    <th style="width:4em;">
+            <a title="G - Pool Table"
+           href="/gym/100182/problem/G">G</a>
+    </th>
+    <th style="width:4em;">
+            <a title="H - Robot Challenge"
+           href="/gym/100182/problem/H">H</a>
+    </th>
+    <th style="width:4em;">
+            <a title="I - Mosaic"
+           href="/gym/100182/problem/I">I</a>
+    </th>
+</tr>
+<tr participantId="1185488">
+    <td>1</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UCF Hue</span>
+    </td>
+    <td>7</td>
+    <td>
+            873
+    </td>
+
+
+    <td
+            problemId="2820"
+            title="Unknown"
+            acceptedSubmissionId="3501199"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">03:24</span>
+        
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501157"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">02:38</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500944"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:20</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500928"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:12</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            title="Unknown"
+            acceptedSubmissionId="3501246"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">04:49</span>
+        
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501077"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:25</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            title="Unknown"
+            acceptedSubmissionId="3501041"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:05</span>
+        
+    </td>
+</tr>
+<tr participantId="1185489">
+    <td>2</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UCF Golden Ratio</span>
+    </td>
+    <td>6</td>
+    <td>
+            529
+    </td>
+
+
+    <td
+            problemId="2820"
+            title="Unknown"
+            acceptedSubmissionId="3501181"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">03:06</span>
+        
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501029"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:58</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500939"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:17</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500932"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:13</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501046"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">01:07</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            title="Unknown"
+            acceptedSubmissionId="3501165"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:48</span>
+        
+    </td>
+</tr>
+<tr participantId="1185490">
+    <td>3</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UCF Parallax</span>
+    </td>
+    <td>6</td>
+    <td>
+            777
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501105"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:43</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500933"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:13</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500952"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:22</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            title="Unknown"
+            acceptedSubmissionId="3501207"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">03:34</span>
+        
+    </td>
+    <td
+            problemId="2826"
+            title="Unknown"
+            acceptedSubmissionId="3501214"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">03:46</span>
+        
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501118"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">01:59</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185491">
+    <td>4</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Panthers A</span>
+    </td>
+    <td>5</td>
+    <td>
+            359
+    </td>
+
+
+    <td
+            problemId="2820"
+            title="Unknown"
+            acceptedSubmissionId="3501172"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:53</span>
+        
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501100"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:41</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500934"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:13</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500968"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:27</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501004"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:45</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185492">
+    <td>5</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Monorail Cat</span>
+    </td>
+    <td>5</td>
+    <td>
+            393
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3500993"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">00:40</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500980"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:32</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500925"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:06</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501074"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:24</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            title="Unknown"
+            acceptedSubmissionId="3501189"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">03:11</span>
+        
+    </td>
+</tr>
+<tr participantId="1185493">
+    <td>6</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UCF Megapixel</span>
+    </td>
+    <td>5</td>
+    <td>
+            463
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501129"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:12</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500948"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:21</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500929"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:12</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            title="Unknown"
+            acceptedSubmissionId="3501215"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">03:47</span>
+        
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501057"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:11</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185494">
+    <td>7</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UM Shockolates</span>
+    </td>
+    <td>5</td>
+    <td>
+            667
+    </td>
+
+
+    <td
+            problemId="2820"
+            title="Unknown"
+            acceptedSubmissionId="3501249"
+    >
+        <span class="cell-accepted">+4</span>
+        <span class="cell-time">04:52</span>
+        
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501094"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">01:36</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501042"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:05</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500986"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:34</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501036"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:00</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185495">
+    <td>8</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UCF CMYK</span>
+    </td>
+    <td>5</td>
+    <td>
+            785
+    </td>
+
+
+    <td
+            problemId="2820"
+            title="Unknown"
+            acceptedSubmissionId="3501195"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">03:20</span>
+        
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501250"
+    >
+        <span class="cell-accepted">+5</span>
+        <span class="cell-time">04:52</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500963"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:26</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500945"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:20</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501143"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:27</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185496">
+    <td>9</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Yellow Jackets</span>
+    </td>
+    <td>4</td>
+    <td>
+            264
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501066"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">01:16</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500949"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:21</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500937"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:15</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501114"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:52</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185497">
+    <td>10</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Clemson 1</span>
+    </td>
+    <td>4</td>
+    <td>
+            271
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3500936"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:14</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501017"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:54</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501030"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:58</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501107"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">01:45</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185498">
+    <td>11</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Clemson A</span>
+    </td>
+    <td>4</td>
+    <td>
+            295
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501060"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:13</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501001"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:44</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501011"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">00:50</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501109"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:48</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185499">
+    <td>12</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">BJU Bit Builders</span>
+    </td>
+    <td>4</td>
+    <td>
+            419
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501113"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:51</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500977"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:31</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500964"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:26</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501190"
+    >
+        <span class="cell-accepted">+3</span>
+        <span class="cell-time">03:11</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185500">
+    <td>13</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Ramblin Wreck</span>
+    </td>
+    <td>4</td>
+    <td>
+            440
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501123"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">02:03</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501012"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">00:50</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500946"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:20</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501184"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">03:07</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185501">
+    <td>14</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Ceiling Cat</span>
+    </td>
+    <td>4</td>
+    <td>
+            518
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501228"
+    >
+        <span class="cell-accepted">+4</span>
+        <span class="cell-time">04:10</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500972"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:29</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500940"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:17</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501140"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:22</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185502">
+    <td>15</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Undefined Behavior</span>
+    </td>
+    <td>4</td>
+    <td>
+            534
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501101"
+    >
+        <span class="cell-accepted">+3</span>
+        <span class="cell-time">01:41</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500953"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:22</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500994"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:40</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501240"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">04:31</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185503">
+    <td>16</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UAB Drakes</span>
+    </td>
+    <td>4</td>
+    <td>
+            583
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501096"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">01:39</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500973"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:29</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500950"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:21</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501252"
+    >
+        <span class="cell-accepted">+5</span>
+        <span class="cell-time">04:54</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185504">
+    <td>17</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">FIU Gold Panthers</span>
+    </td>
+    <td>4</td>
+    <td>
+            617
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501243"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">04:37</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501053"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:08</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501009"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:49</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501211"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">03:43</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185505">
+    <td>18</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UAB Hydras</span>
+    </td>
+    <td>3</td>
+    <td>
+            138
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501075"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">01:24</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500935"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:13</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500951"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:21</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185506">
+    <td>19</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Engineers</span>
+    </td>
+    <td>3</td>
+    <td>
+            203
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500965"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:26</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500960"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:24</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501152"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:33</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185507">
+    <td>20</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">BJU Swamp Monkeys</span>
+    </td>
+    <td>3</td>
+    <td>
+            230
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501153"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:35</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500978"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:31</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501002"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:44</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185508">
+    <td>21</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">USM School of Computing</span>
+    </td>
+    <td>3</td>
+    <td>
+            240
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500981"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:32</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500942"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:18</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501148"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">02:30</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185509">
+    <td>22</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Team Burdell</span>
+    </td>
+    <td>3</td>
+    <td>
+            261
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501154"
+    >
+        <span class="cell-accepted">+3</span>
+        <span class="cell-time">02:36</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500969"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:27</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500943"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:18</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185510">
+    <td>23</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Team Buzz</span>
+    </td>
+    <td>3</td>
+    <td>
+            266
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501005"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:46</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500995"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">00:40</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501137"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">02:20</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185511">
+    <td>24</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">USA-Red</span>
+    </td>
+    <td>3</td>
+    <td>
+            271
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501006"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:47</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501069"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:20</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501141"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:24</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185512">
+    <td>25</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Mercer Team C</span>
+    </td>
+    <td>3</td>
+    <td>
+            296
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501061"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:14</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500982"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:32</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501168"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">02:50</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185513">
+    <td>26</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Itteh Bitteh Kitteh Committeh</span>
+    </td>
+    <td>3</td>
+    <td>
+            303
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500983"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:32</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500926"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:09</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501208"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">03:42</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185514">
+    <td>27</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Sniper Cat</span>
+    </td>
+    <td>3</td>
+    <td>
+            306
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500962"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:25</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500941"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:17</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501235"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">04:24</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185515">
+    <td>28</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Team Alpha</span>
+    </td>
+    <td>3</td>
+    <td>
+            324
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501102"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:41</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500966"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:26</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501134"
+    >
+        <span class="cell-accepted">+3</span>
+        <span class="cell-time">02:17</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185516">
+    <td>29</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Imma let you finish</span>
+    </td>
+    <td>3</td>
+    <td>
+            407
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501136"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">02:19</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501132"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:16</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501115"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:52</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185517">
+    <td>30</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Clemson Alpha</span>
+    </td>
+    <td>3</td>
+    <td>
+            465
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501080"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:27</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501021"
+    >
+        <span class="cell-accepted">+3</span>
+        <span class="cell-time">00:55</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            title="Unknown"
+            acceptedSubmissionId="3501222"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">04:03</span>
+        
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185518">
+    <td>31</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UM Rawberries</span>
+    </td>
+    <td>3</td>
+    <td>
+            474
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501247"
+    >
+        <span class="cell-accepted">+4</span>
+        <span class="cell-time">04:49</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501058"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:11</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500987"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:34</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185519">
+    <td>32</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">FSU Team 1</span>
+    </td>
+    <td>3</td>
+    <td>
+            637
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            title="Unknown"
+            acceptedSubmissionId="3501241"
+    >
+        <span class="cell-accepted">+5</span>
+        <span class="cell-time">04:33</span>
+        
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501144"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:27</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501117"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:57</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185520">
+    <td>33</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Panthers B</span>
+    </td>
+    <td>2</td>
+    <td>
+            43
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500927"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:09</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500988"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:34</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185521">
+    <td>34</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">MSU Maroon</span>
+    </td>
+    <td>2</td>
+    <td>
+            53
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500975"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:30</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500958"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:23</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185522">
+    <td>35</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Mercer Team D</span>
+    </td>
+    <td>2</td>
+    <td>
+            77
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500954"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:22</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501022"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:55</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185523">
+    <td>36</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">BJU Code Crackers</span>
+    </td>
+    <td>2</td>
+    <td>
+            79
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501033"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:59</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500947"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:20</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185524">
+    <td>37</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UM Mananans</span>
+    </td>
+    <td>2</td>
+    <td>
+            81
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501014"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:52</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500974"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:29</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185525">
+    <td>38</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Dunecat</span>
+    </td>
+    <td>2</td>
+    <td>
+            82
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500955"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:22</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501037"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:00</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185526">
+    <td>39</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Auburn University</span>
+    </td>
+    <td>2</td>
+    <td>
+            86
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500992"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:39</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500970"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">00:27</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185527">
+    <td>40</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">FSU Team 2</span>
+    </td>
+    <td>2</td>
+    <td>
+            96
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500956"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:22</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501062"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:14</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185528">
+    <td>41</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Jaguars 1</span>
+    </td>
+    <td>2</td>
+    <td>
+            99
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500984"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:32</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501047"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:07</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185529">
+    <td>42</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Mercer Team A</span>
+    </td>
+    <td>2</td>
+    <td>
+            102
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501000"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:43</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501034"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:59</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185530">
+    <td>43</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">FIU Blue Panthers</span>
+    </td>
+    <td>2</td>
+    <td>
+            120
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501068"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:19</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500996"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:41</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185531">
+    <td>44</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">The Red C</span>
+    </td>
+    <td>2</td>
+    <td>
+            126
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500985"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:32</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501063"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">01:14</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185533">
+    <td>45</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">USA-Green</span>
+    </td>
+    <td>2</td>
+    <td>
+            130
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501013"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:50</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501070"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:20</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185532">
+    <td>45</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">BJU Bug Busters</span>
+    </td>
+    <td>2</td>
+    <td>
+            130
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501054"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">01:08</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500957"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:22</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185534">
+    <td>47</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Omega ush</span>
+    </td>
+    <td>2</td>
+    <td>
+            139
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500991"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:38</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501103"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:41</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185535">
+    <td>48</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Rubber Sharky</span>
+    </td>
+    <td>2</td>
+    <td>
+            140
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501043"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:05</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501065"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:15</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185536">
+    <td>49</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Code Sharks</span>
+    </td>
+    <td>2</td>
+    <td>
+            146
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500930"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:12</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501091"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">01:34</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185537">
+    <td>50</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Voiture Mach 11</span>
+    </td>
+    <td>2</td>
+    <td>
+            152
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501088"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:33</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501035"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:59</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185538">
+    <td>51</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Winthrop University</span>
+    </td>
+    <td>2</td>
+    <td>
+            167
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501024"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:57</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501056"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">01:10</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185539">
+    <td>52</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Team Omega</span>
+    </td>
+    <td>2</td>
+    <td>
+            177
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501073"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:22</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501023"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">00:55</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185540">
+    <td>53</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Annihiliating Function</span>
+    </td>
+    <td>2</td>
+    <td>
+            181
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501111"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">01:50</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500979"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:31</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185541">
+    <td>54</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Panthers C</span>
+    </td>
+    <td>2</td>
+    <td>
+            191
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500938"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:16</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501131"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">02:15</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185542">
+    <td>55</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">UM Uglifruits</span>
+    </td>
+    <td>2</td>
+    <td>
+            197
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501008"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:48</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501147"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:29</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185543">
+    <td>56</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Morehouse # 1</span>
+    </td>
+    <td>2</td>
+    <td>
+            227
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501108"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:45</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501122"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:02</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185544">
+    <td>57</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Ole Miss Red</span>
+    </td>
+    <td>2</td>
+    <td>
+            238
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501158"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:38</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501071"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:20</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185545">
+    <td>58</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">VSU 3</span>
+    </td>
+    <td>2</td>
+    <td>
+            244
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501064"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">01:14</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501149"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:30</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185546">
+    <td>59</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Mercer Team B</span>
+    </td>
+    <td>2</td>
+    <td>
+            296
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3500931"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:12</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501213"
+    >
+        <span class="cell-accepted">+3</span>
+        <span class="cell-time">03:44</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185547">
+    <td>60</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Mustosh</span>
+    </td>
+    <td>2</td>
+    <td>
+            327
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501025"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:57</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501239"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">04:30</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185548">
+    <td>61</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">The Citadel</span>
+    </td>
+    <td>2</td>
+    <td>
+            358
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501099"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">01:40</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501176"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">02:58</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185549">
+    <td>62</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">MSU White</span>
+    </td>
+    <td>2</td>
+    <td>
+            385
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501089"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:33</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501251"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">04:52</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185550">
+    <td>63</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Pirates</span>
+    </td>
+    <td>2</td>
+    <td>
+            406
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501142"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">02:24</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501221"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">04:02</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185551">
+    <td>64</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Red Team</span>
+    </td>
+    <td>2</td>
+    <td>
+            413
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501126"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:05</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501186"
+    >
+        <span class="cell-accepted">+5</span>
+        <span class="cell-time">03:08</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185552">
+    <td>65</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Terriers</span>
+    </td>
+    <td>2</td>
+    <td>
+            414
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501119"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">01:59</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501219"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">03:55</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185553">
+    <td>66</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Ole Miss Blue</span>
+    </td>
+    <td>2</td>
+    <td>
+            485
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501220"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">03:57</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501202"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">03:28</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185554">
+    <td>67</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">BJU Code Angels</span>
+    </td>
+    <td>2</td>
+    <td>
+            497
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501237"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">04:27</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501204"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">03:30</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185555">
+    <td>68</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">OVERCODE</span>
+    </td>
+    <td>2</td>
+    <td>
+            498
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501225"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">04:08</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501229"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">04:10</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185556">
+    <td>69</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Argonauts</span>
+    </td>
+    <td>2</td>
+    <td>
+            525
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501166"
+    >
+        <span class="cell-accepted">+3</span>
+        <span class="cell-time">02:48</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501244"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">04:37</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185557">
+    <td>70</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Morehouse # 2</span>
+    </td>
+    <td>2</td>
+    <td>
+            638
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501234"
+    >
+        <span class="cell-accepted">+4</span>
+        <span class="cell-time">04:20</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501232"
+    >
+        <span class="cell-accepted">+2</span>
+        <span class="cell-time">04:18</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185558">
+    <td>71</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Jircle Cerk</span>
+    </td>
+    <td>1</td>
+    <td>
+            42
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3500997"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">00:42</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185559">
+    <td>72</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Badgers</span>
+    </td>
+    <td>1</td>
+    <td>
+            112
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501116"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">01:52</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185560">
+    <td>73</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Unity</span>
+    </td>
+    <td>1</td>
+    <td>
+            120
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501120"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:00</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185561">
+    <td>74</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Straw Hat Programmers</span>
+    </td>
+    <td>1</td>
+    <td>
+            140
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501138"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:20</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185562">
+    <td>75</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">VSU 2</span>
+    </td>
+    <td>1</td>
+    <td>
+            158
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501159"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">02:38</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185563">
+    <td>76</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">Don't Text Me</span>
+    </td>
+    <td>1</td>
+    <td>
+            195
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            title="Unknown"
+            acceptedSubmissionId="3501193"
+    >
+        <span class="cell-accepted">+</span>
+        <span class="cell-time">03:15</span>
+        
+    </td>
+    <td
+            problemId="2824"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr participantId="1185564">
+    <td>77</td>
+    <td class="contestant-cell" style="text-align:left;padding-left:1em;">
+        <img style="vertical-align:middle;" src="/images/icons/ghost.png" title="Ghost participant" alt="Ghost participant"/>&nbsp;<span style="color:#999;" title="Ghost participant">USA-Blue</span>
+    </td>
+    <td>1</td>
+    <td>
+            265
+    </td>
+
+
+    <td
+            problemId="2820"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2821"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2822"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2823"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2824"
+            title="Unknown"
+            acceptedSubmissionId="3501223"
+    >
+        <span class="cell-accepted">+1</span>
+        <span class="cell-time">04:05</span>
+        
+    </td>
+    <td
+            problemId="2825"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2826"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2827"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+    <td
+            problemId="2828"
+            
+            
+    >
+<span class="cell-rejected">&nbsp;</span>
+    </td>
+</tr>
+<tr class="standingsStatisticsRow">
+    <td>&nbsp;</td>
+    <td class="smaller" style="text-align:left;padding-left:1em;">
+        <span class="cell-passed-system-test cell-accepted" style="font-weight: normal;">Accepted</span>
+        <br/>
+        <span class="notice">Tried</span>
+    </td>
+    <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class="smaller" >
+            <span style="font-weight: normal;" class="cell-passed-system-test cell-accepted">5</span><br/><span class="notice">5</span>
+        </td>
+        <td class="smaller" >
+            <span style="font-weight: normal;" class="cell-passed-system-test cell-accepted">24</span><br/><span class="notice">24</span>
+        </td>
+        <td class="smaller" >
+            <span style="font-weight: normal;" class="cell-passed-system-test cell-accepted">0</span><br/><span class="notice">0</span>
+        </td>
+        <td class="smaller" >
+            <span style="font-weight: normal;" class="cell-passed-system-test cell-accepted">73</span><br/><span class="notice">73</span>
+        </td>
+        <td class="smaller" >
+            <span style="font-weight: normal;" class="cell-passed-system-test cell-accepted">74</span><br/><span class="notice">74</span>
+        </td>
+        <td class="smaller" >
+            <span style="font-weight: normal;" class="cell-passed-system-test cell-accepted">2</span><br/><span class="notice">2</span>
+        </td>
+        <td class="smaller" >
+            <span style="font-weight: normal;" class="cell-passed-system-test cell-accepted">2</span><br/><span class="notice">2</span>
+        </td>
+        <td class="smaller" >
+            <span style="font-weight: normal;" class="cell-passed-system-test cell-accepted">25</span><br/><span class="notice">25</span>
+        </td>
+        <td class="smaller" >
+            <span style="font-weight: normal;" class="cell-passed-system-test cell-accepted">3</span><br/><span class="notice">3</span>
+        </td>
+</tr>
+            </table>
+            </div>
+        </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+                // Create new ':containsIgnoreCase' selector for search
+                jQuery.expr[':'].containsIgnoreCase = function(a, i, m) {
+                    return jQuery(a).text().toUpperCase()
+                            .indexOf(m[3].toUpperCase()) >= 0;
+                };
+
+                if (window.updateDatatableFilter == undefined) {
+                    window.updateDatatableFilter = function(i) {
+                        var parent = $(i).parent().parent().parent().parent();
+                        $("tr.no-items", parent).remove();
+                        $("tr", parent).hide().removeClass('visible');
+                        var text = $(i).val();
+                        if (text) {
+                            $("tr" + ":containsIgnoreCase('" + text + "')", parent).show().addClass('visible');
+                        } else {
+                            parent.find(".rowCount").text("");
+                            $("tr", parent).show().addClass('visible');
+                        }
+
+                        var found = false;
+                        var visibleRowCount = 0;
+                        $("tr", parent).each(function () {
+                            if (!found) {
+                                if ($(this).find("th").size() > 0) {
+                                    $(this).show().addClass('visible');
+                                    found = true;
+                                }
+                            }
+                            if ($(this).hasClass('visible')) {
+                                visibleRowCount++;
+                            }
+                        });
+                        if (text) {
+                            parent.find(".rowCount").text("Matches: " + (visibleRowCount - (found ? 1 : 0)));
+                        }
+                        if (visibleRowCount == (found ? 1 : 0)) {
+                            $("<tr class='no-items visible'><td style=\"text-align:left;\"colspan=\"32\">No items<\/td><\/tr>").appendTo($(parent).find('table'));
+                        }
+                        $(parent).find("tr td").removeClass("dark");
+                        $(parent).find("tr.visible:odd td").addClass("dark");
+                    }
+
+                    $(".datatable .closed").click(function () {
+                        var parent = $(this).parent();
+                        $(this).hide();
+                        $(".filter", parent).fadeIn(function () {
+                            $("input", parent).val("").focus().css("border", "1px solid #aaa");
+                        });
+                    });
+
+                    $(".datatable .opened").click(function () {
+                        var parent = $(this).parent().parent();
+                        $(".filter", parent).fadeOut(function () {
+                            $(".closed", parent).show();
+                            $("input", parent).val("").each(function () {
+                                window.updateDatatableFilter(this);
+                            });
+                        });
+                    });
+
+                    $(".datatable .filter input").keyup(function(e) {
+                        window.updateDatatableFilter(this);
+                        e.preventDefault();
+                        e.stopPropagation();
+                    });
+
+                    $(".datatable table").each(function () {
+                        var found = false;
+                        $("tr", this).each(function () {
+                            if (!found && $(this).find("th").size() == 0) {
+                                found = true;
+                            }
+                        });
+                        if (!found) {
+                            $("<tr class='no-items visible'><td style=\"text-align:left;\"colspan=\"32\">No items<\/td><\/tr>").appendTo(this);
+                        }
+                    });
+
+                    // Applies styles to datatables.
+                    $(".datatable").each(function () {
+                        $(this).find("tr:first th").addClass("top");
+                        $(this).find("tr:last td").addClass("bottom");
+                        $(this).find("tr:odd td").addClass("dark");
+                        $(this).find("tr td:first-child, tr th:first-child").addClass("left");
+                        $(this).find("tr td:last-child, tr th:last-child").addClass("right");
+                    });
+
+                    $(".datatable table.tablesorter").each(function () {
+                        $(this).bind("sortEnd", function () {
+                            $(".datatable").each(function () {
+                                $(this).find("th, td")
+                                    .removeClass("top").removeClass("bottom")
+                                    .removeClass("left").removeClass("right")
+                                    .removeClass("dark");
+                                $(this).find("tr:first th").addClass("top");
+                                $(this).find("tr:last td").addClass("bottom");
+                                $(this).find("tr:odd td").addClass("dark");
+                                $(this).find("tr td:first-child, tr th:first-child").addClass("left");
+                                $(this).find("tr td:last-child, tr th:last-child").addClass("right");
+                            });
+                        });
+                    });
+                }
+        });
+    </script>
+
+<div class="history-div" style="padding: 1em; margin: 1em; width: 800px; height: 400px; overflow: auto; display: none; border: 1px solid #888;">
+    <div class="indicator" style="display: none;">
+        <img src="http://st.codeforces.com/s/15922/images/indicator.gif"/>
+    </div>
+</div>
+
+<div class="test-for-popup-proto" style="display:none;">
+    <div class="test-header">
+        Test: #<span class="test">&nbsp;</span>,
+        time: <span class="time">&nbsp;</span> ms.,
+        memory: <span class="memory">&nbsp;</span> KB,
+        exit code: <span class="exitCode">&nbsp;</span>,
+        checker exit code: <span class="checkerExitCode">&nbsp;</span>,
+        verdict: <span class="verdict">&nbsp;</span>
+    </div>
+    <div style="font-size:1.1rem;">
+        <div class="popup-input-div">
+            <div>Input</div>
+            <pre class="input">&nbsp;</pre>
+        </div>
+        <div class="popup-output-div">
+            <div>Output</div>
+            <pre class="output">&nbsp;</pre>
+        </div>
+        <div class="popup-answer-div">
+            <div>Answer</div>
+            <pre class="answer">&nbsp;</pre>
+        </div>
+        <div>
+            <div>Checker Log</div>
+            <pre class="checker">&nbsp;</pre>
+        </div>
+    </div>
+</div>
+<div class="pagination next-or-prev-prototype" style="float:left; display:none">
+    <a class="arrow prev">&larr;</a>
+    <a class="arrow next">&rarr;</a>
+</div>
+<div class="source-popup"  style="display:none;width:900px;height:500px;overflow:auto;padding:1em;margin:1em;font-size:1.2rem;">
+    <span class="source-popup-header" style="">&nbsp;</span>
+    <pre class="source prettyprint">
+        <img src="http://st.codeforces.com/s/15922/images/indicator.gif"/>
+    </pre>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        showSubmissionSourceCode = function(submissionId) {
+            $.post("/data/submitSource", {submissionId: submissionId}, function(data) {
+                var nop = $(".next-or-prev-prototype").clone().removeClass("next-or-prev-prototype").addClass("next-or-prev").css("display", "block");
+                Codeforces.facebox(".source-popup:first", "http://st.codeforces.com/s/15922");
+                $("#facebox").find(".source:first").text(data["source"]);
+
+                var header = "By " + data["partyName"]
+                    + ", contest: " + data["contestName"]
+                    + ", problem: " + data["problemName"]
+                    +", " + data["verdict"] + ", " + "<a title='Direct Link' href=\"" + data["href"] + "\">#</a>";
+                if (data["offerChallenge"] == "true") {
+                    header += ", <a href=\"" + data["challengeLink"] + "\">hack it!</a>";
+                }
+                header += "<hr/>";
+
+                $("#facebox").find(".source-popup-header").html(header);
+
+                if ($("#facebox").find(".footer .pagination").size() === 0) {
+                    $("#facebox").find(".footer").append(nop);
+                }
+                var p = $("#facebox").find(".footer .pagination");
+
+                if (data["prevId"]) {
+                    p.find(".prev").attr("href", "#").click(function () {
+                        showSubmissionSourceCode(data["prevId"]);
+                        return false;
+                    });
+                }
+                if (data["nextId"]) {
+                    p.find(".next").attr("href", "#").click(function () {
+                        showSubmissionSourceCode(data["nextId"]);
+                        return false;
+                    });
+                }
+
+                prettyPrint();
+
+                var testCount = data["testCount"] ? parseInt(data["testCount"]) : 0;
+                if (testCount > 0) {
+                    $("#facebox").find(".source-popup").append("<hr/><h4>&rarr;Judgement Protocol</h4>");
+                }
+                for (var i = 1; i <= testCount; i++) {
+                    if (data["verdict#" + i]) {
+                        var e = $("div.test-for-popup-proto").clone()
+                            .removeClass("test-for-popup-proto").addClass("test-for-popup")
+                            .css("display", "block");
+                        e.find(".test").text(i);
+                        e.find(".time").text(data["timeConsumed#" + i]);
+                        e.find(".memory").text(data["memoryConsumed#" + i] ? parseInt(data["memoryConsumed#" + i]) / 1024 : "");
+                        e.find(".exitCode").text(data["exitCode#" + i]);
+                        e.find(".checkerExitCode").text(data["checkerExitCode#" + i]);
+                        e.find(".verdict").text(data["verdict#" + i]);
+
+                        if (data["input#" + i]) {
+                            e.find(".input").text(data["input#" + i]);
+                        } else {
+                            e.find(".popup-input-div").hide();
+                        }
+
+                        if (data["output#" + i]) {
+                            e.find(".output").text(data["output#" + i]);
+                        } else {
+                            e.find(".popup-output-div").hide();
+                        }
+
+                        if (data["answer#" + i]) {
+                            e.find(".answer").text(data["answer#" + i]);
+                        } else {
+                            e.find(".popup-answer-div").hide();
+                        }
+
+                        e.find(".checker").text(data["checkerStdoutAndStderr#" + i] ? data["checkerStdoutAndStderr#" + i] : " ");
+                        $("#facebox").find(".source-popup").append(e);
+                    }
+                }
+            }, "json");
+        };
+
+        $(".change-participant-type-link").click(function () {
+            var contestId = $(this).attr("data-contestId");
+            var targetParticipantId = $(this).attr("data-participantId");
+
+            var changeParticipantType = function () {
+                $.post("/data/changeParticipantType",
+                        { contestId: contestId, targetParticipantId: targetParticipantId },
+                        function(response) {
+                            if (response.success == "true") {
+                                Codeforces.reload();
+                            } else {
+                                Codeforces.showMessage("Changing participant type is failed");
+                            }
+                        },
+                        "json"
+                );
+            };
+
+            Codeforces.confirm(
+                    "Are you sure you want to change participant type from virtual to practice (this operation is not reversible and may take a few seconds)?", changeParticipantType, function () { }, "OK", "No"
+            );
+
+            return false;
+        });
+
+        $(".participant-devirtualize-link").click(function () {
+            var contestId = $(this).attr("data-contestId");
+            var targetParticipantId = $(this).attr("data-participantId");
+
+            var changeParticipantType = function () {
+                $.post("/data/changeParticipantType",
+                        { action: "devirtualize", contestId: contestId, targetParticipantId: targetParticipantId },
+                        function(response) {
+                            if (response.success == "true") {
+                                Codeforces.reload();
+                            } else {
+                                Codeforces.showMessage("Changing participant type is failed");
+                            }
+                        },
+                        "json"
+                );
+            };
+
+            Codeforces.confirm(
+                    "Are you sure you want to devirtualize this participant (this operation is not reversible)?", changeParticipantType, function () { }, "OK", "No"
+            );
+
+            return false;
+        });
+    });
+</script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+    function handleContestantProblemHistory(td) {
+        Codeforces.facebox(".history-div", "http://st.codeforces.com/s/15922");
+        $(".history-div .indicator").show();
+
+        var participantId = td.parent().attr("participantId");
+        var problemId = td.attr("problemId");
+        var challengeLink = "/gym/100182/challenge/123456789";
+
+        $.post("/data/standings",
+            {participantId: participantId, problemId: problemId},
+            function(response) {
+                $(".history-div .indicator").hide();
+                var historyDiv = $("#facebox .history-div");
+                historyDiv.text("");
+
+                $.each(response, function(i, event) {
+                    historyDiv.append(event.contestTime).append("&nbsp;&nbsp;");
+                    historyDiv.append(event.verdict);
+                    if (event.submissionId > 0) {
+                        historyDiv.append(" &rarr; <a submissionId=\"" + event.submissionId + "\" class=\"showSource\" href=\"#\">" + event.submissionId + "</a>");
+                        if (event.offerChallenge == "true") {
+                            var link = challengeLink.replace("123456789", event.submissionId);
+                            historyDiv.append(" &rarr; <a href=\"" + link + "\">hack it!</a>");
+                        }
+                    }
+                    historyDiv.append("<br/>");
+                });
+
+                historyDiv.find(".showSource").click(function () {
+                    showSubmissionSourceCode($(this).attr("submissionId"));
+                    return false;
+                });
+            },
+            "json"
+        );
+    }
+
+    function handleContestantHistory(td) {
+        Codeforces.facebox(".history-div", "http://st.codeforces.com/s/15922");
+        $(".history-div .indicator").show();
+
+        var participantId = td.parent().attr("participantId");
+
+        $.post("/data/standings",
+            {participantId: participantId},
+            function(response) {
+                $(".history-div .indicator").hide();
+                var historyDiv = $("#facebox .history-div");
+                historyDiv.text("");
+
+                $.each(response, function(i, event) {
+                    historyDiv.append(event.contestTime).append("&nbsp;&nbsp;");
+                    historyDiv.append(event.problem).append("&nbsp;&nbsp;");
+                    historyDiv.append(event.verdict);
+                    if (event.submissionId > 0)
+                        historyDiv.append(" &rarr; <a submissionId=\"" + event.submissionId + "\" class=\"showSource\" href=\"#\">" + event.submissionId + "</a>");
+                    historyDiv.append("<br/>");
+                });
+
+                historyDiv.find(".showSource").click(function () {
+                    showSubmissionSourceCode($(this).attr("submissionId"));
+                    return false;
+                });
+            },
+            "json"
+        );
+    }
+
+    $(".standings td[problemId]").bind("dblclick", function () {
+        handleContestantProblemHistory($(this));
+    });
+
+    $(".standings td[problemId]").click(function(e) {
+        if(e.ctrlKey) {
+            handleContestantProblemHistory($(this));
+        }
+    });
+
+    $(".standings .contestant-cell").bind("dblclick", function () {
+        handleContestantHistory($(this));
+    });
+
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+var insertFirst = $("table.participantRowTable").attr("insertFirst");
+if (insertFirst) {
+    var tr = $("table.participantRowTable tr:first").clone();
+    if (insertFirst == "true") {
+        var insertAfterTr = $(".standings tr:first");
+        insertAfterTr.after(tr);
+    } else {
+        var statisticsRow = $(".standings tr.standingsStatisticsRow");
+        if (statisticsRow.length) {
+            statisticsRow.before(tr);
+        } else {
+            var insertAfterTr = $(".standings tr:last");
+            insertAfterTr.after(tr);
+        }
+    }
+}
+
+$(".standings").each(function () {
+    $(this).find("tr:first th").addClass("top");
+    $(this).find("tr:last td").addClass("bottom");
+    $(this).find("tr:even td").removeClass("dark");
+    $(this).find("tr:odd td").addClass("dark");
+    $(this).find("tr td:first-child, tr th:first-child").addClass("left");
+    $(this).find("tr td:last-child, tr th:last-child").addClass("right");
+});
+
+    $(".standings tr[participantId=8145720]").addClass("highlighted-row");
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+    $(".toggle-show-unofficial input[name='showUnofficial']").change(function () {
+        $(".toggle-show-unofficial").submit();
+    });
+        });
+    </script>
+                </div>
+        </div>
+            <br style="clear: both;"/>
+            <div id="footer">
+                <div><a href="http://codeforces.com/">Codeforces</a> (c) Copyright 2010-2016 Mike Mirzayanov</div>
+                <div>The only programming contests Web 2.0 platform</div>
+                    <div>Server time: <span class="format-timewithseconds" data-locale="en">Oct/22/2016 17:53:19</span> (c2).</div>
+                    Desktop version, switch to <a rel="nofollow" class="switchToMobile" href="?mobile=true">mobile version</a>.
+            </div>
+        <script type="text/javascript">
+            $(function() {
+                $(".switchToMobile").click(function() {
+                    Codeforces.redirect(Codeforces.updateUrlParameter(document.location.href, "mobile", "true"));
+                    return false;
+                });
+                $(".switchToDesktop").click(function() {
+                    Codeforces.redirect(Codeforces.updateUrlParameter(document.location.href, "mobile", "false"));
+                    return false;
+                });
+            });
+        </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($(window).width() < 1600) {
+                $('.button-up').css('width', '30px').css('line-height', '30px').css('font-size', '20px');
+            }
+
+            if ($(window).width() >= 1200) {
+                $ (window).scroll (function () {
+                    if ($ (this).scrollTop () > 100) {
+                        $ ('.button-up').fadeIn();
+                    } else {
+                        $ ('.button-up').fadeOut();
+                    }
+                });
+
+                $('.button-up').click(function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 500);
+                    return false;
+                });
+
+                $('.button-up').hover(function () {
+                    $(this).animate({
+                        'opacity':'1'
+                    }).css({'background-color':'#e7ebf0','color':'#6a86a4'});
+                }, function () {
+                    $(this).animate({
+                        'opacity':'0.7'
+                    }).css({'background':'none','color':'#d3dbe4'});;
+                });
+            }
+            Codeforces.focusOnError();
+        });
+    </script>
+
+        <div class="userListsFacebox" style="display:none;">
+            <div style="padding: 0.5em; width: 600px; max-height: 200px; overflow-y: auto">
+<div class="datatable"
+     
+     style="background-color: #E1E1E1; padding-bottom: 3px;">
+            <div class="lt">&nbsp;</div>
+            <div class="rt">&nbsp;</div>
+            <div class="lb">&nbsp;</div>
+            <div class="rb">&nbsp;</div>
+
+            <div style="padding: 4px 0 0 6px;font-size:1.4rem;position:relative;">
+                User lists
+
+                <div style="position:absolute;right:0.25em;top:0.35em;">
+                    <span style="padding:0;position:relative;bottom:2px;" class="rowCount"></span>
+
+                    <img class="closed" src="http://st.codeforces.com/s/15922/images/icons/control.png"/>
+
+                    <span class="filter" style="display:none;">
+                        <img class="opened" src="http://st.codeforces.com/s/15922/images/icons/control-270.png"/>
+                        <input style="padding:0;position:relative;bottom:2px;border:1px solid #aaa;height:17px;font-size:1.3rem;"/>
+                    </span>
+                </div>
+            </div>
+            <div style="background-color: white;margin:0.3em 3px 0 3px;position:relative;">
+            <div class="ilt">&nbsp;</div>
+            <div class="irt">&nbsp;</div>
+            <table class="">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+            </table>
+            </div>
+        </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+                // Create new ':containsIgnoreCase' selector for search
+                jQuery.expr[':'].containsIgnoreCase = function(a, i, m) {
+                    return jQuery(a).text().toUpperCase()
+                            .indexOf(m[3].toUpperCase()) >= 0;
+                };
+
+                if (window.updateDatatableFilter == undefined) {
+                    window.updateDatatableFilter = function(i) {
+                        var parent = $(i).parent().parent().parent().parent();
+                        $("tr.no-items", parent).remove();
+                        $("tr", parent).hide().removeClass('visible');
+                        var text = $(i).val();
+                        if (text) {
+                            $("tr" + ":containsIgnoreCase('" + text + "')", parent).show().addClass('visible');
+                        } else {
+                            parent.find(".rowCount").text("");
+                            $("tr", parent).show().addClass('visible');
+                        }
+
+                        var found = false;
+                        var visibleRowCount = 0;
+                        $("tr", parent).each(function () {
+                            if (!found) {
+                                if ($(this).find("th").size() > 0) {
+                                    $(this).show().addClass('visible');
+                                    found = true;
+                                }
+                            }
+                            if ($(this).hasClass('visible')) {
+                                visibleRowCount++;
+                            }
+                        });
+                        if (text) {
+                            parent.find(".rowCount").text("Matches: " + (visibleRowCount - (found ? 1 : 0)));
+                        }
+                        if (visibleRowCount == (found ? 1 : 0)) {
+                            $("<tr class='no-items visible'><td style=\"text-align:left;\"colspan=\"32\">No items<\/td><\/tr>").appendTo($(parent).find('table'));
+                        }
+                        $(parent).find("tr td").removeClass("dark");
+                        $(parent).find("tr.visible:odd td").addClass("dark");
+                    }
+
+                    $(".datatable .closed").click(function () {
+                        var parent = $(this).parent();
+                        $(this).hide();
+                        $(".filter", parent).fadeIn(function () {
+                            $("input", parent).val("").focus().css("border", "1px solid #aaa");
+                        });
+                    });
+
+                    $(".datatable .opened").click(function () {
+                        var parent = $(this).parent().parent();
+                        $(".filter", parent).fadeOut(function () {
+                            $(".closed", parent).show();
+                            $("input", parent).val("").each(function () {
+                                window.updateDatatableFilter(this);
+                            });
+                        });
+                    });
+
+                    $(".datatable .filter input").keyup(function(e) {
+                        window.updateDatatableFilter(this);
+                        e.preventDefault();
+                        e.stopPropagation();
+                    });
+
+                    $(".datatable table").each(function () {
+                        var found = false;
+                        $("tr", this).each(function () {
+                            if (!found && $(this).find("th").size() == 0) {
+                                found = true;
+                            }
+                        });
+                        if (!found) {
+                            $("<tr class='no-items visible'><td style=\"text-align:left;\"colspan=\"32\">No items<\/td><\/tr>").appendTo(this);
+                        }
+                    });
+
+                    // Applies styles to datatables.
+                    $(".datatable").each(function () {
+                        $(this).find("tr:first th").addClass("top");
+                        $(this).find("tr:last td").addClass("bottom");
+                        $(this).find("tr:odd td").addClass("dark");
+                        $(this).find("tr td:first-child, tr th:first-child").addClass("left");
+                        $(this).find("tr td:last-child, tr th:last-child").addClass("right");
+                    });
+
+                    $(".datatable table.tablesorter").each(function () {
+                        $(this).bind("sortEnd", function () {
+                            $(".datatable").each(function () {
+                                $(this).find("th, td")
+                                    .removeClass("top").removeClass("bottom")
+                                    .removeClass("left").removeClass("right")
+                                    .removeClass("dark");
+                                $(this).find("tr:first th").addClass("top");
+                                $(this).find("tr:last td").addClass("bottom");
+                                $(this).find("tr:odd td").addClass("dark");
+                                $(this).find("tr td:first-child, tr th:first-child").addClass("left");
+                                $(this).find("tr td:last-child, tr th:last-child").addClass("right");
+                            });
+                        });
+                    });
+                }
+        });
+    </script>
+            </div>
+        </div>
+        <script type="application/javascript">
+            $(function() {
+                $(".userListMarker").click(function() {
+                    $.post("/data/lists", {action: "findTouched"}, function(json) {
+                        Codeforces.facebox(".userListsFacebox");
+                        var tbody = $("#facebox tbody");
+                        tbody.empty();
+                        for (var i in json) {
+                            tbody.append(
+                                    $("<tr></tr>").append(
+                                            $("<td></td>").attr("data-readKey", json[i].readKey).text(json[i].name)
+                                    )
+                            );
+                        }
+                        Codeforces.updateDatatables();
+                        tbody.find("td").css("cursor", "pointer").click(function() {
+                            document.location = Codeforces.updateUrlParameter(document.location.href, "list", $(this).attr("data-readKey"));
+                        });
+                    }, "json");
+                });
+            });
+        </script>
+</body>
+</html>
