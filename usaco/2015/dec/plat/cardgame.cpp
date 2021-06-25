@@ -95,7 +95,8 @@ int main() {
         st0.set(b[i], 1);
         r0[i + 1] = st0.points[0];
     }
-    
+
+
     reverse(all(a));
     reverse(all(b));
     for (int i = 0; i < n; ++i) {
@@ -108,7 +109,7 @@ int main() {
         st1.set(b[i], 1);
         r1[i + 1] = st1.points[0];
     }
-    
+
     int ans = 0;
     for (int i = 0; i <= n; ++i) {
         ans = max(ans, r0[i] + r1[n - i]);

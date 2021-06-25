@@ -9,3 +9,7 @@ for folder in "${folders[@]}"; do
     find . -type f  -name "*.out"  -delete
     cd ".."
 done
+
+git add .
+git commit -m "update"
+git push
