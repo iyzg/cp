@@ -9,37 +9,8 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 
 string line;
-multiset<int> lens;
+vector<int> lens;
 int total, strSz;
-
-bool bf(int rows) {
-    multiset<int> tmp = lens;
-    int target = total / rows;
-    if (*lens.begin() > target) return false;
-
-    while (!tmp.empty()) {
-        int cur = *prev(tmp.end());
-        tmp.erase(prev(tmp.end()));
-
-        while (cur < target) {
-            auto it = tmp.lower_bound(target - cur - 1);
-            if (it == tmp.end() || *it + cur + 1 != target) {
-                it = tmp.upper_bound(target - cur - (*tmp.begin() + 1) - 1);
-                if (it == tmp.begin()) return false;
-                it = prev(it);
-                cur += *it + 1;
-                tmp.erase(it);
-            } else {
-                cur += *it + 1;
-                tmp.erase(it);
-            }
-        }
-
-        if (cur != target) return false;
-    }
-
-    return true;
-}
 
 void solve() {
     getline(cin, line);
@@ -49,24 +20,34 @@ void solve() {
 
     for (auto c : line) {
         if (c == ' ') {
-            lens.insert(strSz);
+            lens.push_back(strSz);
             strSz = 0;
         } else ++strSz;
     }
 
     if (strSz) {
-        lens.insert(strSz);
+        lens.push_back(strSz);
     }
 
     bool ans = false;
     for (int groups = 2; groups <= sz(lens); ++groups) {
-        if (ans) break;
-
         total = sz(line) - (groups - 1);
-        if (!(total % groups)) {
-            // cout << "Trying: " << groups << ' ' << total << '\n';
-            ans = bf(groups);
+        if (total % groups) continue;
+        int target = total / groups;
+
+        int tmp = 0;
+        bool val = true;
+        for (int i = 0; i < sz(lens); ++i) {
+            if (!tmp) tmp += lens[i];
+            else tmp += lens[i] + 1;
+
+            if (tmp >= target) {
+                val = (val & (tmp == target));
+                tmp = 0;
+            }
         }
+
+        ans = ans | val;
     }
 
     if (ans) cout << "YES\n";
